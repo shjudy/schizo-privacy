@@ -1,152 +1,254 @@
-Schizo — 프레스룸 / Press Room
-최종 수정 / Last updated: 2026-07-22 · 기준 버전 / Version: 1.0.4
-한국어
-SCHIZO는 방에서 혼자 녹음한 노래를 음원으로 만드는 맥용 보컬 제작 도구입니다. 스템 분리부터 음정·음색·화음·믹스·마스터링까지, 모든 오디오 처리는 사용자의 맥 안에서 끝납니다.
-1. 무엇을 하는 앱인가
-	•	음원을 보컬과 반주로 분리합니다(온디바이스 AI 스템 분리, 4스템).
-	•	원곡과 비교해 가창을 진단하고, 피아노롤에서 음정을 고칩니다.
-	•	목소리의 살결·톤·숨을 실시간으로 성형하고, 잡음·입소리·방 울림·클리핑을 정리합니다.
-	•	곡의 키를 읽어 화음을 쌓습니다(전조 자동 감지).
-	•	더블링·합창·공간·밀도를 입혀 믹스로 만듭니다(실시간 미리듣기 + 오토메이션 곡선).
-	•	상용 음원의 톤과 음량을 목표로 마스터링하고, 상용 색과 내 색깔을 나란히 듣고 고릅니다.
-	•	모든 작업은 비파괴 타임라인('진료 기록')에 남아, 어떤 버전이든 그 시점 설정 그대로 되불러 이어 만질 수 있습니다.
-	•	처음 쓰는 사람을 위한 간편 모드 — 파일 하나, 노브 하나, 버튼 하나.
-2. 왜 이런 세계관인가
-SCHIZO의 세계관은 병을 소재로 빌려온 것이 아니라, 혼자 녹음하는 사람이 실제로 하는 일에서 나왔습니다. 한 곡을 음원으로 만들려면 한 사람이 분리·음정·음색·화음·믹스·마스터·판정이라는 일곱 개의 서로 다른 판단을 번갈아 맡아야 하고, 이 앱은 그 일곱 개의 손을 일곱 인물로 세운 것입니다. 여기 쓰인 어둠은 조롱이 아니라 은유이며, 그 증거는 앱 안에 있습니다 — 화면 옆에는 조현병·양극성 장애·우울·불안/공황·사회불안·PTSD·불면에 대한 짧은 사실 정보 카드 92장이 돌아가고, 전부 공중보건 기관(WHO, 국가정신건강정보포털, NIMH)의 공개 자료에 근거하며 병명 라벨과 "사람마다 다를 수 있음 · 의학적 조언이 아님" 고지를 달고 있습니다. 연출이 부담스러운 사람은 헤더의 '차분 모드' 스위치 하나로 전부 끌 수 있고, 온보딩은 건너뛸 수 있으며, 그 온보딩에는 이 앱이 음악 제작 도구이고 이야기는 허구라는 고지가 상시 떠 있습니다. 이 이야기는 업데이트마다 한 겹씩 벗겨지도록 설계돼 있고, 지금 보이는 표면이 전부가 아닙니다.
-3. 만든 사람
-SCHIZO는 1인 개발입니다. 기획·DSP·UI·아트 선별·문안까지 한 사람이 만들었습니다. 앱 밖 표면(공유 카드 워터마크·내보내기·릴리즈 노트·문서 하단)에 보이는 Shyun.D는 만든 사람의 서명입니다 — Made with SCHIZO — Shyun.D 형태로 언제나 맨 뒤에 붙습니다.
-4. 프라이버시 요지
-	•	오디오는 로컬 온리입니다. 오디오 파일·녹음·작업 결과물은 어떤 경우에도 서버로 전송되지 않고, 모든 처리(스템 분리, 피치 보정, 잡음·잔향 제거, 믹싱, 마스터링)는 사용자의 맥 안에서 실행됩니다. 파일 이름과 곡 제목도 전송되지 않습니다.
-	•	로그인은 선택입니다. 계정 없이 모든 기능을 쓸 수 있고, 로그인은 설정·취향 백업에만 쓰입니다.
-	•	사용 통계는 옵트인입니다. 첫 실행 동의 화면에서 '보내지 않기'를 고르면 한 건도 전송되지 않으며, 동의한 뒤에도 언제든 끌 수 있고 끄면 기기에 남아 있던 대기분까지 삭제됩니다. 보내는 값은 비식별 숫자·불리언·앱 내부 화면 이름뿐입니다.
-	•	광고 식별자·추적을 쓰지 않고, 데이터를 제3자에게 판매하거나 광고 목적으로 제공하지 않습니다.
-	•	구독이 없습니다. 결제는 비소모성 인앱 결제 1종뿐이고, 결제 자체는 Apple이 처리합니다(개발자는 금액·거래 번호·계정 정보를 받지 않습니다).
-	•	계정 정보와 설정 백업은 앱 안의 '계정 삭제' 버튼으로 즉시 지울 수 있습니다.
-	•	전문: 개인정보 처리방침
-5. 사실 관계
-앱 이름
-Schizo
-플랫폼
-macOS · Mac App Store 단독 배포 (번들 ID com.shjudy.schizoapp)
-요구 사양
-macOS 14.0(소노마) 이상 · Apple 실리콘 맥(arm64)
-카테고리
-음악
-연령 등급
-12+
-가격 구조
-무료 + 1회 구매 — 무료로 모든 기능을 쓸 수 있고 완성본(믹스·마스터) 저장이 한 곡으로 제한됩니다. 저장 무제한은 비소모성 인앱 결제 1회로 열립니다. 구독 없음. (금액은 스토어 표시가를 확인해 주세요)
-언어
-한국어 · English — 앱 헤더에서 언제든 전환
-출시일
-1.0 — 2026-07-05
-기준 버전
-1.0.4
-네트워크
-오디오 무전송. 유일한 통신은 ⑴ 선택 로그인, ⑵ 옵트인 사용 통계, ⑶ 방 울림 제거를 처음 켤 때 신경망 모델 파일 1회 다운로드(약 53MB · HTTPS · SHA-256 검증). 이 기능을 켜지 않으면 앱은 완전 오프라인으로 동작합니다
-접근성·배려
-차분 모드(연출 전면 차단) · 온보딩 건너뛰기 · 키보드·보이스오버 이동 · 광과민 배려(모션 줄이기 연동)
-개발
-1인 개발
-6. 자주 나오는 질문
-Q. 앱 이름이 왜 SCHIZO인가요? 영어권에서는 멸칭입니다.
-알고 골랐습니다. 그리고 그 사실이 이 답변에서 가장 중요한 부분입니다.
-저는 조현병 당사자는 아닙니다. 다만 정신질환으로 분류되는 병으로 10년 넘게 상담과 치료를 받아왔습니다. 그동안 이상하게 느낀 것이 하나 있습니다 — 다른 병은 앓는다고 말할 수 있는데, 이 계열의 병만은 다들 숨기기에 급급하다는 것이었습니다. 병 자체보다 병을 말할 수 없다는 쪽이 더 무겁게 느껴질 때가 있었습니다.
-그래서 이런 생각을 했습니다. 이 단어가 긍정도 부정도 아닌, 그냥 "아, 그 병을 앓는 사람이구나" 정도로 들리게 되면 어떨까. 암 환자라는 말처럼요. 이름에 그 단어를 얹어 보면 조금이나마 그 방향으로 밀 수 있지 않을까 싶었습니다.
-물론 저는 조현병 당사자가 아니고, 남의 이름표를 대신 되찾아 줄 자격이 제게 있다고 생각하지 않습니다. 그래서 이름 하나에 기대지 않고 앱 안에 근거를 두었습니다 — 정신질환에 대한 정보 카드 92장은 출처를 밝혀 넣었고, 세계관 연출이 부담스러우면 차분 모드로 전부 끌 수 있으며, 온보딩에는 "이 이야기는 허구"라는 고지가 늘 떠 있습니다. 등장인물은 진단명이 아니라 악상 기호에서 이름을 가져왔습니다.
-이 선택이 옳았는지는 아직 모릅니다. 불편하다는 이야기를 들으면 그때 다시 생각하겠습니다.
-Q. 정신질환을 소재로 쓴 이유가 뭔가요?
-위 '2. 왜 이런 세계관인가'를 그대로 읽어 주세요. 덧붙이자면, 이 앱은 증상을 구경거리로 쓰지 않기 위한 규칙을 코드 안에 문서로 박아 두고 만듭니다 — 자해·자살 묘사 금지, 체중·외모 조롱 금지, 완충 표현, 병명 라벨 명시, 출처 고지, 서사 문구와 의학 정보 문구의 분리 표기. 카드가 늘어날 때마다 같은 규칙을 통과해야 합니다.
-Q. 의료 목적 앱인가요?
-아닙니다. SCHIZO는 음악 제작 도구입니다. 진단하지 않고, 치료하지 않으며, 의학적 조언을 하지 않습니다. 앱 안의 정보 카드는 공중보건 기관의 공개 자료에 근거한 교육용 요약이며, 모든 카드에 "사람마다 다를 수 있음 · 의학적 조언이 아님" 고지가 붙어 있습니다.
-Q. AI를 쓰나요?
-씁니다. 어디에 쓰는지는 앱의 계정 화면에 있는 고지 문서에 전부 공개돼 있습니다.
-⑴ 오디오 — 스템 분리는 오픈소스 모델 htdemucs(Demucs v4, Meta AI, MIT)를 Core ML로 변환해 기기 안에서 돌리고, 방 울림 제거도 신경망 모델을 내려받아 기기 안에서 돌립니다. 사용자의 오디오는 학습에 쓰이지 않고, 서버로 가지 않습니다.
-⑵ 아트 — 캐릭터 아트·온보딩/배경 이미지·퍼즐 조각은 생성형 이미지 도구로 제작한 뒤 직접 선별·크롭·리터치했습니다. 제3자의 기존 저작물을 가져온 것은 없습니다. 서명 글씨도 같은 방식으로 만들었습니다. UI 사운드 3종은 외부 샘플 없는 합성 톤이며, 장르 타겟 데이터·정보 카드 문안·프리셋은 자체 제작입니다.
-⑶ 목소리 — 이 앱은 목소리를 만들어 내지 않습니다. 남의 목소리를 흉내 내거나 이식하는 기능은 없고, 처리 대상은 사용자가 실제로 부른 소리뿐입니다('곁 목소리'도 사용자 본인 테이크에서 파생됩니다).
-Q. 데이터는 어디로 가나요?
-오디오는 어디로도 가지 않습니다 — 처리 전 과정이 사용자의 맥 안에서 끝나고, 파일 이름과 곡 제목도 전송되지 않습니다. 서버로 가는 것은 ⑴ 로그인한 경우의 계정 식별자·이메일·설정 백업, ⑵ 동의한 경우의 익명 사용 통계 두 가지뿐이며, 둘 다 선택이고 언제든 끄거나 지울 수 있습니다. 서버는 Supabase이고 데이터는 서울 리전에 저장됩니다. 자세한 항목은 위 '4. 프라이버시 요지'와 개인정보 처리방침에 있습니다.
-Q. 구독이 아니라 1회 구매인 이유는?
-도구는 빌려주는 것보다 파는 편이 정직하다고 봤습니다. 무료로 모든 기능을 쓸 수 있고, 완성본 저장만 한 곡으로 제한됩니다. 그 제한을 푸는 비소모성 인앱 결제가 하나 있을 뿐 구독은 없습니다.
-Q. 남의 상용 음원을 분리하는 데 써도 되나요?
-이 앱은 사용자가 권리를 가진 파일을 다루라고 만든 도구이고, 지향점은 "남의 음원을 벗기는 것"이 아니라 자기 목소리를 음원으로 만드는 것입니다. 저작물 이용의 적법성은 사용자에게 달려 있습니다. 참고로 공식 스크린샷은 전부 개발자 자작곡 소재로 촬영했습니다.
-7. 연락처
-지원·개인정보·미디어 문의 전부 이 주소 하나입니다 — schizoapp@icloud.com
-8. 마음이 무거운 날에는
-이 앱은 의료 도구가 아니고, 앱 속 이야기는 허구입니다. 하지만 무거운 날이 길어지고 있다면 — 혼자 견디지 마세요.
-자살예방 상담전화 ☎109 · 정신건강 위기상담 ☎1577-0199 — 둘 다 24시간, 전국 어디서나.
-English
-SCHIZO is a Mac app that turns a song recorded alone in a room into a finished record — stems, pitch, tone, harmonies, mix and master. All audio processing stays on the user's Mac.
-1. What the app does
-	•	Splits a track into vocals and instrumental (on-device AI stem separation, 4 stems).
-	•	Diagnoses a take against the original and lets you fix notes on a piano roll.
-	•	Reshapes the texture, tone and breath of a voice in real time, and clears noise, mouth sounds, room reverb and clipping.
-	•	Reads the key of a song and stacks harmonies (key changes detected automatically).
-	•	Builds a mix with doubles, choir, space and density (real-time preview plus automation curves).
-	•	Masters toward the tone and loudness of commercial records, and lets you hear a commercial color and your own side by side before choosing.
-	•	Every step is kept on a non-destructive timeline (the "chart"), so any version can be recalled with its exact settings and worked on further.
-	•	Simple Mode for first-timers — one file, one knob, one button.
-2. Why this world
-SCHIZO's world did not borrow illness as a theme; it came out of what recording alone actually requires. Turning one song into a record means one person taking turns at seven different judgments — separation, pitch, tone, harmony, mix, master, verdict — and the app gives those seven hands seven faces. The darkness here is a metaphor, not a joke, and the evidence sits inside the app: a column of 92 short factual cards on schizophrenia, bipolar disorder, depression, anxiety and panic disorder, social anxiety, PTSD and insomnia, all drawn from public materials from public-health authorities (WHO, Korea's national mental-health information portal, NIMH), each labeled by condition and carrying a visible disclaimer ("based on public sources · may vary from person to person · not medical advice"). A single Calm Mode switch in the header turns every narrative effect off, the onboarding can be skipped, and that onboarding carries a persistent notice that this is a music-production tool and the story is fiction. The story is built to be peeled back one layer per update — what you can see today is not all of it.
-3. The developer
-SCHIZO is made by one person — design, DSP, UI, art selection and copy. Shyun.D, which appears outside the app (share-card watermarks, exports, release notes, the foot of documents), is the signature of the person who made it, always at the end, in the form Made with SCHIZO — Shyun.D.
-4. Privacy in short
-	•	Audio is local only. Audio files, recordings and results are never sent to a server under any circumstances, and every processing step (stem separation, pitch correction, noise and reverb removal, mixing, mastering) runs on the user's Mac. File names and song titles are not transmitted either.
-	•	Sign-in is optional. Every feature works without an account; signing in is only used to back up settings and preferences.
-	•	Usage statistics are opt-in. Choosing "Don't send" on the first-launch consent screen means nothing is ever transmitted, and it can be turned off later at any time — doing so also deletes anything still queued on the device. The values sent are only non-identifying numbers, booleans and in-app screen names.
-	•	No ad identifiers, no tracking, and no selling or sharing of data with third parties for advertising.
-	•	No subscription. There is a single non-consumable in-app purchase, and Apple handles the payment itself (the developer receives no amounts, transaction IDs or account details).
-	•	Account info and settings backups can be erased instantly with the in-app "Delete account" button.
-	•	Full text: Privacy Policy
-5. Fact sheet
-Name
-Schizo
-Platform
-macOS · Mac App Store only (bundle ID com.shjudy.schizoapp)
-Requirements
-macOS 14.0 (Sonoma) or later · Apple silicon Mac (arm64)
-Category
-Music
-Age rating
-12+
-Pricing
-Free with a one-time purchase — every feature is free to use, with saving finished tracks (mix and master) limited to one song. Unlimited saving is unlocked by a single non-consumable in-app purchase. No subscription. (Please check the store listing for the current price.)
-Languages
-Korean · English — switchable anytime from the app header
-Released
-1.0 — 2026-07-05
-Current version
-1.0.4
-Network
-No audio is ever transmitted. The only network activity is (1) optional sign-in, (2) opt-in usage statistics, and (3) a one-time download of a neural model file the first time room-reverb removal is switched on (about 53 MB · HTTPS · SHA-256 verified). Without that feature the app runs fully offline.
-Accessibility
-Calm Mode (all narrative effects off) · skippable onboarding · keyboard and VoiceOver navigation · photosensitivity care (follows Reduce Motion)
-Team
-One developer
-6. Frequently asked
-Q. Why is the app called SCHIZO? In English that word is a slur.
-I chose it knowingly. That is the most important thing in this answer.
-I do not have schizophrenia. What I do have is an illness that is classified as a mental illness, and more than ten years of counseling and treatment for it. Over those years one thing kept striking me as strange: people can say out loud that they have other illnesses, but with this family of illnesses almost everyone is busy hiding it. There were stretches where not being able to say it sat heavier than the illness did.
-So I had a thought. What if this word could become ordinary — not a compliment, not an insult, just "ah, that is someone who has that illness," the way "cancer patient" lands. I thought that putting the word on a title might push a little in that direction.
-I am aware of what that sounds like. This word is used against people, and I am not one of the people it is used against; I do not think reclaiming someone else's label is something a bystander gets to do on their behalf. So I did not rest the case on the name. I put the evidence inside the app instead — 92 information cards about mental illness, each with its source shown; a Calm Mode that switches the entire fiction off for anyone who does not want it; and an onboarding that keeps a standing notice saying the story is fiction. The characters take their names from musical markings, not from diagnoses.
-I do not know yet whether this was the right call. If I hear that it hurts, I will think about it again.
-Q. Why build the app around mental illness at all?
-Please read "2. Why this world" above as the answer. To add one thing: the rules for not turning symptoms into a spectacle are written down inside the codebase — no depiction of self-harm or suicide, no jokes about weight or appearance, softened phrasing, an explicit condition label, a stated source, and a visual separation between narrative lines and medical-information lines. Every new card has to pass the same rules.
-Q. Is this a medical app?
-No. SCHIZO is a music-production tool. It does not diagnose, does not treat, and does not give medical advice. The information cards inside the app are educational summaries based on public materials from public-health authorities, and every card carries the disclaimer "may vary from person to person · not medical advice".
-Q. Do you use AI?
-Yes, and where it is used is fully disclosed in the notices document reachable from the app's account screen.
-(1) Audio — stem separation runs the open-source htdemucs model (Demucs v4, Meta AI, MIT) converted to Core ML, on the device; room-reverb removal downloads a neural model and also runs it on the device. User audio is never used for training and never leaves the Mac.
-(2) Art — character art, onboarding and background images and puzzle pieces were produced with generative image tools, then selected, cropped and retouched by hand. No existing third-party work was taken. The signature lettering was made the same way. The three UI sounds are synthesized tones with no external samples, and the genre target data, information-card copy and presets are all made in-house.
-(3) Voice — the app does not generate voices. There is no feature that imitates or transplants someone else's voice; the only thing processed is what the user actually sang (even the "side voice" is derived from the user's own take).
-Q. Where does my data go?
-Audio goes nowhere — the entire processing chain finishes on the user's Mac, and file names and song titles are not transmitted. The only things that reach a server are (1) the account identifier, email and settings backup if you sign in, and (2) anonymous usage statistics if you consent. Both are optional and can be turned off or deleted at any time. The server is Supabase and the data is stored in the Seoul region. Details are in "4. Privacy in short" above and in the privacy policy.
-Q. Why a one-time purchase instead of a subscription?
-Selling a tool felt more honest than renting it out. Every feature is free to use; only saving finished tracks is limited to one song. There is a single non-consumable in-app purchase that lifts that limit, and no subscription.
-Q. Can it be used to separate someone else's commercial recording?
-This is a tool built for files you have the rights to, and its purpose is not to strip someone else's record but to turn your own voice into one. Whether a given use is lawful is up to the user. For reference, every official screenshot was shot with the developer's own songs.
-7. Contact
-Support, privacy and media enquiries all go to one address — schizoapp@icloud.com
-8. On the heavy days
-This app is not a medical tool, and its story is fiction. But if the heavy days are stretching on — please don't carry them alone.
-In Korea: suicide prevention ☎109 · mental-health crisis line ☎1577-0199, both 24h nationwide. Outside Korea, please reach your local crisis line.
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Schizo — 프레스룸 / Press Room</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    margin: 0 auto; max-width: 680px; padding: 48px 24px 80px;
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+    line-height: 1.7; background: #0b0b0b; color: #e8e8e8;
+  }
+  h1 { font-size: 1.6rem; letter-spacing: 0.02em; }
+  h2 { font-size: 1.15rem; margin-top: 2.5em; border-bottom: 1px solid #333; padding-bottom: 0.3em; }
+  h3 { font-size: 1rem; margin-top: 1.8em; }
+  h4 { font-size: 0.95rem; margin-top: 1.6em; margin-bottom: 0.3em; }
+  strong { color: #fff; }
+  a { color: #bbb; }
+  li { margin: 0.4em 0; }
+  .updated { color: #888; font-size: 0.85rem; }
+  .callout { border: 1px solid #444; border-radius: 10px; padding: 12px 16px; }
+  blockquote {
+    margin: 0.8em 0; padding: 0 0 0 14px; border-left: 2px solid #444; color: #d0d0d0;
+  }
+  .tablewrap { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font-size: 0.92rem; }
+  th, td { border-bottom: 1px solid #333; padding: 0.5em 0.7em; text-align: left; vertical-align: top; }
+  th { color: #fff; white-space: nowrap; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.9em; }
+  @media (prefers-color-scheme: light) {
+    body { background: #fafafa; color: #1a1a1a; }
+    strong { color: #000; }
+    a { color: #555; }
+    h2 { border-color: #ddd; }
+    .updated { color: #777; }
+    .callout { border-color: #ccc; }
+    blockquote { border-color: #ccc; color: #333; }
+    th, td { border-color: #ddd; }
+    th { color: #000; }
+  }
+</style>
+</head>
+<body>
+<h1>Schizo — 프레스룸 / Press Room</h1>
+<p class="updated">최종 수정 / Last updated: 2026-07-22 · 기준 버전 / Version: 1.0.4</p>
+
+<h2>한국어</h2>
+<p class="callout"><strong>SCHIZO는 방에서 혼자 녹음한 노래를 음원으로 만드는 맥용 보컬 제작 도구입니다.</strong> 스템 분리부터 음정·음색·화음·믹스·마스터링까지, 모든 오디오 처리는 사용자의 맥 안에서 끝납니다.</p>
+
+<h3>1. 무엇을 하는 앱인가</h3>
+<ul>
+  <li>음원을 보컬과 반주로 분리합니다(온디바이스 AI 스템 분리, 4스템).</li>
+  <li>원곡과 비교해 가창을 진단하고, 피아노롤에서 음정을 고칩니다.</li>
+  <li>목소리의 살결·톤·숨을 실시간으로 성형하고, 잡음·입소리·방 울림·클리핑을 정리합니다.</li>
+  <li>곡의 키를 읽어 화음을 쌓습니다(전조 자동 감지).</li>
+  <li>더블링·합창·공간·밀도를 입혀 믹스로 만듭니다(실시간 미리듣기 + 오토메이션 곡선).</li>
+  <li>상용 음원의 톤과 음량을 목표로 마스터링하고, 상용 색과 내 색깔을 나란히 듣고 고릅니다.</li>
+  <li>모든 작업은 비파괴 타임라인('진료 기록')에 남아, 어떤 버전이든 그 시점 설정 그대로 되불러 이어 만질 수 있습니다.</li>
+  <li>처음 쓰는 사람을 위한 <strong>간편 모드</strong> — 파일 하나, 노브 하나, 버튼 하나.</li>
+</ul>
+
+<h3>2. 왜 이런 세계관인가</h3>
+<blockquote>
+<p>SCHIZO의 세계관은 병을 소재로 빌려온 것이 아니라, 혼자 녹음하는 사람이 실제로 하는 일에서 나왔습니다. 한 곡을 음원으로 만들려면 한 사람이 분리·음정·음색·화음·믹스·마스터·판정이라는 일곱 개의 서로 다른 판단을 번갈아 맡아야 하고, 이 앱은 그 일곱 개의 손을 일곱 인물로 세운 것입니다. 여기 쓰인 어둠은 조롱이 아니라 은유이며, 그 증거는 앱 안에 있습니다 — 화면 옆에는 조현병·양극성 장애·우울·불안/공황·사회불안·PTSD·불면에 대한 짧은 사실 정보 카드 92장이 돌아가고, 전부 공중보건 기관(WHO, 국가정신건강정보포털, NIMH)의 공개 자료에 근거하며 병명 라벨과 "사람마다 다를 수 있음 · 의학적 조언이 아님" 고지를 달고 있습니다. 연출이 부담스러운 사람은 헤더의 '차분 모드' 스위치 하나로 전부 끌 수 있고, 온보딩은 건너뛸 수 있으며, 그 온보딩에는 이 앱이 음악 제작 도구이고 이야기는 허구라는 고지가 상시 떠 있습니다. 이 이야기는 업데이트마다 한 겹씩 벗겨지도록 설계돼 있고, 지금 보이는 표면이 전부가 아닙니다.</p>
+</blockquote>
+
+<h3>3. 만든 사람</h3>
+<p>SCHIZO는 1인 개발입니다. 기획·DSP·UI·아트 선별·문안까지 한 사람이 만들었습니다. 앱 밖 표면(공유 카드 워터마크·내보내기·릴리즈 노트·문서 하단)에 보이는 <strong>Shyun.D는 만든 사람의 서명</strong>입니다 — <code>Made with SCHIZO — Shyun.D</code> 형태로 언제나 맨 뒤에 붙습니다.</p>
+
+<h3>4. 프라이버시 요지</h3>
+<ul>
+  <li><strong>오디오는 로컬 온리입니다.</strong> 오디오 파일·녹음·작업 결과물은 어떤 경우에도 서버로 전송되지 않고, 모든 처리(스템 분리, 피치 보정, 잡음·잔향 제거, 믹싱, 마스터링)는 사용자의 맥 안에서 실행됩니다. 파일 이름과 곡 제목도 전송되지 않습니다.</li>
+  <li><strong>로그인은 선택</strong>입니다. 계정 없이 모든 기능을 쓸 수 있고, 로그인은 설정·취향 백업에만 쓰입니다.</li>
+  <li><strong>사용 통계는 옵트인</strong>입니다. 첫 실행 동의 화면에서 '보내지 않기'를 고르면 한 건도 전송되지 않으며, 동의한 뒤에도 언제든 끌 수 있고 끄면 기기에 남아 있던 대기분까지 삭제됩니다. 보내는 값은 비식별 숫자·불리언·앱 내부 화면 이름뿐입니다.</li>
+  <li><strong>광고 식별자·추적을 쓰지 않고</strong>, 데이터를 제3자에게 판매하거나 광고 목적으로 제공하지 않습니다.</li>
+  <li><strong>구독이 없습니다.</strong> 결제는 비소모성 인앱 결제 1종뿐이고, 결제 자체는 Apple이 처리합니다(개발자는 금액·거래 번호·계정 정보를 받지 않습니다).</li>
+  <li>계정 정보와 설정 백업은 앱 안의 '계정 삭제' 버튼으로 즉시 지울 수 있습니다.</li>
+  <li>전문: <a href="https://shjudy.github.io/schizo-privacy/">개인정보 처리방침</a></li>
+</ul>
+
+<h3>5. 사실 관계</h3>
+<div class="tablewrap">
+<table>
+  <tr><th>앱 이름</th><td>Schizo</td></tr>
+  <tr><th>플랫폼</th><td>macOS · Mac App Store 단독 배포 (번들 ID <code>com.shjudy.schizoapp</code>)</td></tr>
+  <tr><th>요구 사양</th><td>macOS 14.0(소노마) 이상 · Apple 실리콘 맥(arm64)</td></tr>
+  <tr><th>카테고리</th><td>음악</td></tr>
+  <tr><th>연령 등급</th><td>12+</td></tr>
+  <tr><th>가격 구조</th><td><strong>무료 + 1회 구매</strong> — 무료로 모든 기능을 쓸 수 있고 완성본(믹스·마스터) 저장이 한 곡으로 제한됩니다. 저장 무제한은 비소모성 인앱 결제 1회로 열립니다. <strong>구독 없음.</strong> (금액은 스토어 표시가를 확인해 주세요)</td></tr>
+  <tr><th>언어</th><td>한국어 · English — 앱 헤더에서 언제든 전환</td></tr>
+  <tr><th>출시일</th><td>1.0 — 2026-07-05</td></tr>
+  <tr><th>기준 버전</th><td>1.0.4</td></tr>
+  <tr><th>네트워크</th><td>오디오 무전송. 유일한 통신은 ⑴ 선택 로그인, ⑵ 옵트인 사용 통계, ⑶ 방 울림 제거를 처음 켤 때 신경망 모델 파일 1회 다운로드(약 53MB · HTTPS · SHA-256 검증). 이 기능을 켜지 않으면 앱은 완전 오프라인으로 동작합니다</td></tr>
+  <tr><th>접근성·배려</th><td>차분 모드(연출 전면 차단) · 온보딩 건너뛰기 · 키보드·보이스오버 이동 · 광과민 배려(모션 줄이기 연동)</td></tr>
+  <tr><th>개발</th><td>1인 개발</td></tr>
+</table>
+</div>
+
+<h3>6. 자주 나오는 질문</h3>
+
+<h4>Q. 앱 이름이 왜 SCHIZO인가요? 영어권에서는 멸칭입니다.</h4>
+<blockquote>
+<p>알고 골랐습니다. 그리고 그 사실이 이 답변에서 가장 중요한 부분입니다.</p>
+<p>저는 조현병 당사자는 아닙니다. 다만 정신질환으로 분류되는 병으로 10년 넘게 상담과 치료를 받아왔습니다. 그동안 이상하게 느낀 것이 하나 있습니다 — 다른 병은 앓는다고 말할 수 있는데, 이 계열의 병만은 다들 숨기기에 급급하다는 것이었습니다. 병 자체보다 병을 말할 수 없다는 쪽이 더 무겁게 느껴질 때가 있었습니다.</p>
+<p>그래서 이런 생각을 했습니다. 이 단어가 긍정도 부정도 아닌, 그냥 "아, 그 병을 앓는 사람이구나" 정도로 들리게 되면 어떨까. 암 환자라는 말처럼요. 이름에 그 단어를 얹어 보면 조금이나마 그 방향으로 밀 수 있지 않을까 싶었습니다.</p>
+<p>물론 저는 조현병 당사자가 아니고, 남의 이름표를 대신 되찾아 줄 자격이 제게 있다고 생각하지 않습니다. 그래서 이름 하나에 기대지 않고 앱 안에 근거를 두었습니다 — 정신질환에 대한 정보 카드 92장은 출처를 밝혀 넣었고, 세계관 연출이 부담스러우면 차분 모드로 전부 끌 수 있으며, 온보딩에는 "이 이야기는 허구"라는 고지가 늘 떠 있습니다. 등장인물은 진단명이 아니라 악상 기호에서 이름을 가져왔습니다.</p>
+<p>이 선택이 옳았는지는 아직 모릅니다. 불편하다는 이야기를 들으면 그때 다시 생각하겠습니다.</p>
+</blockquote>
+
+<h4>Q. 정신질환을 소재로 쓴 이유가 뭔가요?</h4>
+<blockquote>
+<p>위 '2. 왜 이런 세계관인가'를 그대로 읽어 주세요. 덧붙이자면, 이 앱은 증상을 구경거리로 쓰지 않기 위한 규칙을 코드 안에 문서로 박아 두고 만듭니다 — 자해·자살 묘사 금지, 체중·외모 조롱 금지, 완충 표현, 병명 라벨 명시, 출처 고지, 서사 문구와 의학 정보 문구의 분리 표기. 카드가 늘어날 때마다 같은 규칙을 통과해야 합니다.</p>
+</blockquote>
+
+<h4>Q. 의료 목적 앱인가요?</h4>
+<blockquote>
+<p>아닙니다. SCHIZO는 음악 제작 도구입니다. 진단하지 않고, 치료하지 않으며, 의학적 조언을 하지 않습니다. 앱 안의 정보 카드는 공중보건 기관의 공개 자료에 근거한 교육용 요약이며, 모든 카드에 "사람마다 다를 수 있음 · 의학적 조언이 아님" 고지가 붙어 있습니다.</p>
+</blockquote>
+
+<h4>Q. AI를 쓰나요?</h4>
+<blockquote>
+<p>씁니다. 어디에 쓰는지는 앱의 계정 화면에 있는 고지 문서에 전부 공개돼 있습니다.</p>
+<p>⑴ <strong>오디오</strong> — 스템 분리는 오픈소스 모델 htdemucs(Demucs v4, Meta AI, MIT)를 Core ML로 변환해 <strong>기기 안에서</strong> 돌리고, 방 울림 제거도 신경망 모델을 내려받아 <strong>기기 안에서</strong> 돌립니다. 사용자의 오디오는 학습에 쓰이지 않고, 서버로 가지 않습니다.</p>
+<p>⑵ <strong>아트</strong> — 캐릭터 아트·온보딩/배경 이미지·퍼즐 조각은 생성형 이미지 도구로 제작한 뒤 직접 선별·크롭·리터치했습니다. 제3자의 기존 저작물을 가져온 것은 없습니다. 서명 글씨도 같은 방식으로 만들었습니다. UI 사운드 3종은 외부 샘플 없는 합성 톤이며, 장르 타겟 데이터·정보 카드 문안·프리셋은 자체 제작입니다.</p>
+<p>⑶ <strong>목소리</strong> — 이 앱은 목소리를 만들어 내지 않습니다. 남의 목소리를 흉내 내거나 이식하는 기능은 없고, 처리 대상은 사용자가 실제로 부른 소리뿐입니다('곁 목소리'도 사용자 본인 테이크에서 파생됩니다).</p>
+</blockquote>
+
+<h4>Q. 데이터는 어디로 가나요?</h4>
+<blockquote>
+<p>오디오는 어디로도 가지 않습니다 — 처리 전 과정이 사용자의 맥 안에서 끝나고, 파일 이름과 곡 제목도 전송되지 않습니다. 서버로 가는 것은 ⑴ 로그인한 경우의 계정 식별자·이메일·설정 백업, ⑵ 동의한 경우의 익명 사용 통계 두 가지뿐이며, 둘 다 선택이고 언제든 끄거나 지울 수 있습니다. 서버는 Supabase이고 데이터는 서울 리전에 저장됩니다. 자세한 항목은 위 '4. 프라이버시 요지'와 개인정보 처리방침에 있습니다.</p>
+</blockquote>
+
+<h4>Q. 구독이 아니라 1회 구매인 이유는?</h4>
+<blockquote>
+<p>도구는 빌려주는 것보다 파는 편이 정직하다고 봤습니다. 무료로 모든 기능을 쓸 수 있고, 완성본 저장만 한 곡으로 제한됩니다. 그 제한을 푸는 비소모성 인앱 결제가 하나 있을 뿐 구독은 없습니다.</p>
+</blockquote>
+
+<h4>Q. 남의 상용 음원을 분리하는 데 써도 되나요?</h4>
+<blockquote>
+<p>이 앱은 사용자가 권리를 가진 파일을 다루라고 만든 도구이고, 지향점은 "남의 음원을 벗기는 것"이 아니라 <strong>자기 목소리를 음원으로 만드는 것</strong>입니다. 저작물 이용의 적법성은 사용자에게 달려 있습니다. 참고로 공식 스크린샷은 전부 개발자 자작곡 소재로 촬영했습니다.</p>
+</blockquote>
+
+<h3>7. 연락처</h3>
+<p>지원·개인정보·미디어 문의 전부 이 주소 하나입니다 — <a href="mailto:schizoapp@icloud.com">schizoapp@icloud.com</a></p>
+
+<h3>8. 마음이 무거운 날에는</h3>
+<p>이 앱은 의료 도구가 아니고, 앱 속 이야기는 허구입니다. 하지만 무거운 날이 길어지고 있다면 — 혼자 견디지 마세요.</p>
+<p><strong>자살예방 상담전화 ☎109</strong> · <strong>정신건강 위기상담 ☎1577-0199</strong> — 둘 다 24시간, 전국 어디서나.</p>
+
+<h2>English</h2>
+<p class="callout"><strong>SCHIZO is a Mac app that turns a song recorded alone in a room into a finished record</strong> — stems, pitch, tone, harmonies, mix and master. All audio processing stays on the user's Mac.</p>
+
+<h3>1. What the app does</h3>
+<ul>
+  <li>Splits a track into vocals and instrumental (on-device AI stem separation, 4 stems).</li>
+  <li>Diagnoses a take against the original and lets you fix notes on a piano roll.</li>
+  <li>Reshapes the texture, tone and breath of a voice in real time, and clears noise, mouth sounds, room reverb and clipping.</li>
+  <li>Reads the key of a song and stacks harmonies (key changes detected automatically).</li>
+  <li>Builds a mix with doubles, choir, space and density (real-time preview plus automation curves).</li>
+  <li>Masters toward the tone and loudness of commercial records, and lets you hear a commercial color and your own side by side before choosing.</li>
+  <li>Every step is kept on a non-destructive timeline (the "chart"), so any version can be recalled with its exact settings and worked on further.</li>
+  <li><strong>Simple Mode</strong> for first-timers — one file, one knob, one button.</li>
+</ul>
+
+<h3>2. Why this world</h3>
+<blockquote>
+<p>SCHIZO's world did not borrow illness as a theme; it came out of what recording alone actually requires. Turning one song into a record means one person taking turns at seven different judgments — separation, pitch, tone, harmony, mix, master, verdict — and the app gives those seven hands seven faces. The darkness here is a metaphor, not a joke, and the evidence sits inside the app: a column of 92 short factual cards on schizophrenia, bipolar disorder, depression, anxiety and panic disorder, social anxiety, PTSD and insomnia, all drawn from public materials from public-health authorities (WHO, Korea's national mental-health information portal, NIMH), each labeled by condition and carrying a visible disclaimer ("based on public sources · may vary from person to person · not medical advice"). A single Calm Mode switch in the header turns every narrative effect off, the onboarding can be skipped, and that onboarding carries a persistent notice that this is a music-production tool and the story is fiction. The story is built to be peeled back one layer per update — what you can see today is not all of it.</p>
+</blockquote>
+
+<h3>3. The developer</h3>
+<p>SCHIZO is made by one person — design, DSP, UI, art selection and copy. <strong>Shyun.D, which appears outside the app</strong> (share-card watermarks, exports, release notes, the foot of documents), <strong>is the signature of the person who made it</strong>, always at the end, in the form <code>Made with SCHIZO — Shyun.D</code>.</p>
+
+<h3>4. Privacy in short</h3>
+<ul>
+  <li><strong>Audio is local only.</strong> Audio files, recordings and results are never sent to a server under any circumstances, and every processing step (stem separation, pitch correction, noise and reverb removal, mixing, mastering) runs on the user's Mac. File names and song titles are not transmitted either.</li>
+  <li><strong>Sign-in is optional.</strong> Every feature works without an account; signing in is only used to back up settings and preferences.</li>
+  <li><strong>Usage statistics are opt-in.</strong> Choosing "Don't send" on the first-launch consent screen means nothing is ever transmitted, and it can be turned off later at any time — doing so also deletes anything still queued on the device. The values sent are only non-identifying numbers, booleans and in-app screen names.</li>
+  <li><strong>No ad identifiers, no tracking</strong>, and no selling or sharing of data with third parties for advertising.</li>
+  <li><strong>No subscription.</strong> There is a single non-consumable in-app purchase, and Apple handles the payment itself (the developer receives no amounts, transaction IDs or account details).</li>
+  <li>Account info and settings backups can be erased instantly with the in-app "Delete account" button.</li>
+  <li>Full text: <a href="https://shjudy.github.io/schizo-privacy/">Privacy Policy</a></li>
+</ul>
+
+<h3>5. Fact sheet</h3>
+<div class="tablewrap">
+<table>
+  <tr><th>Name</th><td>Schizo</td></tr>
+  <tr><th>Platform</th><td>macOS · Mac App Store only (bundle ID <code>com.shjudy.schizoapp</code>)</td></tr>
+  <tr><th>Requirements</th><td>macOS 14.0 (Sonoma) or later · Apple silicon Mac (arm64)</td></tr>
+  <tr><th>Category</th><td>Music</td></tr>
+  <tr><th>Age rating</th><td>12+</td></tr>
+  <tr><th>Pricing</th><td><strong>Free with a one-time purchase</strong> — every feature is free to use, with saving finished tracks (mix and master) limited to one song. Unlimited saving is unlocked by a single non-consumable in-app purchase. <strong>No subscription.</strong> (Please check the store listing for the current price.)</td></tr>
+  <tr><th>Languages</th><td>Korean · English — switchable anytime from the app header</td></tr>
+  <tr><th>Released</th><td>1.0 — 2026-07-05</td></tr>
+  <tr><th>Current version</th><td>1.0.4</td></tr>
+  <tr><th>Network</th><td>No audio is ever transmitted. The only network activity is (1) optional sign-in, (2) opt-in usage statistics, and (3) a one-time download of a neural model file the first time room-reverb removal is switched on (about 53 MB · HTTPS · SHA-256 verified). Without that feature the app runs fully offline.</td></tr>
+  <tr><th>Accessibility</th><td>Calm Mode (all narrative effects off) · skippable onboarding · keyboard and VoiceOver navigation · photosensitivity care (follows Reduce Motion)</td></tr>
+  <tr><th>Team</th><td>One developer</td></tr>
+</table>
+</div>
+
+<h3>6. Frequently asked</h3>
+
+<h4>Q. Why is the app called SCHIZO? In English that word is a slur.</h4>
+<blockquote>
+<p>I chose it knowingly. That is the most important thing in this answer.</p>
+<p>I do not have schizophrenia. What I do have is an illness that is classified as a mental illness, and more than ten years of counseling and treatment for it. Over those years one thing kept striking me as strange: people can say out loud that they have other illnesses, but with this family of illnesses almost everyone is busy hiding it. There were stretches where not being able to say it sat heavier than the illness did.</p>
+<p>So I had a thought. What if this word could become ordinary — not a compliment, not an insult, just "ah, that is someone who has that illness," the way "cancer patient" lands. I thought that putting the word on a title might push a little in that direction.</p>
+<p>I am aware of what that sounds like. This word is used against people, and I am not one of the people it is used against; I do not think reclaiming someone else's label is something a bystander gets to do on their behalf. So I did not rest the case on the name. I put the evidence inside the app instead — 92 information cards about mental illness, each with its source shown; a Calm Mode that switches the entire fiction off for anyone who does not want it; and an onboarding that keeps a standing notice saying the story is fiction. The characters take their names from musical markings, not from diagnoses.</p>
+<p>I do not know yet whether this was the right call. If I hear that it hurts, I will think about it again.</p>
+</blockquote>
+
+<h4>Q. Why build the app around mental illness at all?</h4>
+<blockquote>
+<p>Please read "2. Why this world" above as the answer. To add one thing: the rules for not turning symptoms into a spectacle are written down inside the codebase — no depiction of self-harm or suicide, no jokes about weight or appearance, softened phrasing, an explicit condition label, a stated source, and a visual separation between narrative lines and medical-information lines. Every new card has to pass the same rules.</p>
+</blockquote>
+
+<h4>Q. Is this a medical app?</h4>
+<blockquote>
+<p>No. SCHIZO is a music-production tool. It does not diagnose, does not treat, and does not give medical advice. The information cards inside the app are educational summaries based on public materials from public-health authorities, and every card carries the disclaimer "may vary from person to person · not medical advice".</p>
+</blockquote>
+
+<h4>Q. Do you use AI?</h4>
+<blockquote>
+<p>Yes, and where it is used is fully disclosed in the notices document reachable from the app's account screen.</p>
+<p>(1) <strong>Audio</strong> — stem separation runs the open-source htdemucs model (Demucs v4, Meta AI, MIT) converted to Core ML, <strong>on the device</strong>; room-reverb removal downloads a neural model and also runs it <strong>on the device</strong>. User audio is never used for training and never leaves the Mac.</p>
+<p>(2) <strong>Art</strong> — character art, onboarding and background images and puzzle pieces were produced with generative image tools, then selected, cropped and retouched by hand. No existing third-party work was taken. The signature lettering was made the same way. The three UI sounds are synthesized tones with no external samples, and the genre target data, information-card copy and presets are all made in-house.</p>
+<p>(3) <strong>Voice</strong> — the app does not generate voices. There is no feature that imitates or transplants someone else's voice; the only thing processed is what the user actually sang (even the "side voice" is derived from the user's own take).</p>
+</blockquote>
+
+<h4>Q. Where does my data go?</h4>
+<blockquote>
+<p>Audio goes nowhere — the entire processing chain finishes on the user's Mac, and file names and song titles are not transmitted. The only things that reach a server are (1) the account identifier, email and settings backup if you sign in, and (2) anonymous usage statistics if you consent. Both are optional and can be turned off or deleted at any time. The server is Supabase and the data is stored in the Seoul region. Details are in "4. Privacy in short" above and in the privacy policy.</p>
+</blockquote>
+
+<h4>Q. Why a one-time purchase instead of a subscription?</h4>
+<blockquote>
+<p>Selling a tool felt more honest than renting it out. Every feature is free to use; only saving finished tracks is limited to one song. There is a single non-consumable in-app purchase that lifts that limit, and no subscription.</p>
+</blockquote>
+
+<h4>Q. Can it be used to separate someone else's commercial recording?</h4>
+<blockquote>
+<p>This is a tool built for files you have the rights to, and its purpose is not to strip someone else's record but <strong>to turn your own voice into one</strong>. Whether a given use is lawful is up to the user. For reference, every official screenshot was shot with the developer's own songs.</p>
+</blockquote>
+
+<h3>7. Contact</h3>
+<p>Support, privacy and media enquiries all go to one address — <a href="mailto:schizoapp@icloud.com">schizoapp@icloud.com</a></p>
+
+<h3>8. On the heavy days</h3>
+<p>This app is not a medical tool, and its story is fiction. But if the heavy days are stretching on — please don't carry them alone.</p>
+<p>In Korea: <strong>suicide prevention ☎109</strong> · <strong>mental-health crisis line ☎1577-0199</strong>, both 24h nationwide. Outside Korea, please reach your local crisis line.</p>
+</body>
+</html>
