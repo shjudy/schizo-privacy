@@ -20,6 +20,13 @@
   li { margin: 0.4em 0; }
   .updated { color: #888; font-size: 0.85rem; }
   .callout { border: 1px solid #444; border-radius: 10px; padding: 12px 16px; }
+  .getit { margin: 1.2em 0 0; }
+  .getit a {
+    display: inline-block; padding: 10px 18px; border: 1px solid #666; border-radius: 8px;
+    color: #fff; text-decoration: none; font-weight: 600;
+  }
+  .getit a:hover { border-color: #aaa; }
+  .getit .note { display: block; margin-top: 0.5em; color: #888; font-size: 0.85rem; }
   blockquote {
     margin: 0.8em 0; padding: 0 0 0 14px; border-left: 2px solid #444; color: #d0d0d0;
   }
@@ -32,6 +39,9 @@
     body { background: #fafafa; color: #1a1a1a; }
     strong { color: #000; }
     a { color: #555; }
+    .getit a { color: #000; border-color: #999; }
+    .getit a:hover { border-color: #333; }
+    .getit .note { color: #777; }
     h2 { border-color: #ddd; }
     .updated { color: #777; }
     .callout { border-color: #ccc; }
@@ -43,10 +53,17 @@
 </head>
 <body>
 <h1>Schizo — 프레스룸 / Press Room</h1>
-<p class="updated">최종 수정 / Last updated: 2026-07-22 · 기준 버전 / Version: 1.0.4</p>
+<p class="updated">최종 수정 / Last updated: 2026-07-26 · 기준 버전 / Version: 1.0.7</p>
+<!-- ⚠️ 2.0 승인 시 함께 고칠 것: <title>·<h1>의 "Schizo" → "Shyun.D", 본문 SCHIZO 표기,
+     그리고 이 줄의 기준 버전. 앱스토어 링크는 ID 기반이라 개명돼도 그대로 작동한다. -->
 
 <h2>한국어</h2>
 <p class="callout"><strong>SCHIZO는 방에서 혼자 녹음한 노래를 음원으로 만드는 맥용 보컬 제작 도구입니다.</strong> 스템 분리부터 음정·음색·화음·믹스·마스터링까지, 모든 오디오 처리는 사용자의 맥 안에서 끝납니다.</p>
+
+<p class="getit">
+  <a href="https://apps.apple.com/app/id6787841675">맥 앱스토어에서 보기 →</a>
+  <span class="note">맥 전용입니다. 아이폰·아이패드에서는 설치되지 않습니다.</span>
+</p>
 
 <h3>1. 무엇을 하는 앱인가</h3>
 <ul>
@@ -150,6 +167,11 @@
 
 <h2>English</h2>
 <p class="callout"><strong>SCHIZO is a Mac app that turns a song recorded alone in a room into a finished record</strong> — stems, pitch, tone, harmonies, mix and master. All audio processing stays on the user's Mac.</p>
+
+<p class="getit">
+  <a href="https://apps.apple.com/app/id6787841675">View on the Mac App Store →</a>
+  <span class="note">Mac only — it does not install on iPhone or iPad.</span>
+</p>
 
 <h3>1. What the app does</h3>
 <ul>
