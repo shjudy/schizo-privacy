@@ -107,8 +107,8 @@
 <h3>5. 프라이버시 요지</h3>
 <ul>
   <li><strong>오디오는 로컬 온리입니다.</strong> 오디오 파일·녹음·작업 결과물은 어떤 경우에도 서버로 전송되지 않고, 모든 처리(스템 분리, 피치 보정, 잡음·잔향 제거, 믹싱, 마스터링)는 사용자의 맥 안에서 실행됩니다. 파일 이름과 곡 제목도 전송되지 않습니다.</li>
-  <li><strong>로그인은 선택</strong>입니다. 계정 없이 모든 기능을 쓸 수 있고, 로그인은 설정·취향 백업에만 쓰입니다.</li>
-  <li><strong>사용 통계는 옵트인</strong>입니다. 첫 실행 동의 화면에서 '보내지 않기'를 고르면 한 건도 전송되지 않으며, 동의한 뒤에도 언제든 끌 수 있고 끄면 기기에 남아 있던 대기분까지 삭제됩니다. 보내는 값은 비식별 숫자·불리언·앱 내부 화면 이름뿐입니다.</li>
+  <li><strong>로그인은 선택</strong>입니다. 계정 없이 모든 기능을 쓸 수 있습니다. 로그인은 설정·취향 백업에 쓰이고, <strong>로그인한 상태에서 보낸 사용 통계 이벤트에는 계정 식별자가 함께 붙습니다</strong>(앱 내 '계정 삭제' 시 연결 해제).</li>
+  <li><strong>사용 통계는 옵트인</strong>입니다. 첫 실행 동의 화면에서 '보내지 않기'를 고르면 한 건도 전송되지 않으며, 동의한 뒤에도 언제든 끌 수 있고 끄면 기기에 남아 있던 대기분까지 삭제됩니다. 보내는 값은 비식별 숫자·불리언·앱 내부 화면 이름뿐이며, 로그인하지 않았다면 익명입니다.</li>
   <li><strong>광고 식별자·추적을 쓰지 않고</strong>, 데이터를 제3자에게 판매하거나 광고 목적으로 제공하지 않습니다.</li>
   <li><strong>구독이 없습니다.</strong> 결제는 비소모성 인앱 결제 1종뿐이고, 결제 자체는 Apple이 처리합니다(개발자는 금액·거래 번호·계정 정보를 받지 않습니다).</li>
   <li>계정 정보와 설정 백업은 앱 안의 '계정 삭제' 버튼으로 즉시 지울 수 있습니다.</li>
@@ -164,7 +164,7 @@
 
 <h4>Q. 데이터는 어디로 가나요?</h4>
 <blockquote>
-<p>오디오는 어디로도 가지 않습니다 — 처리 전 과정이 사용자의 맥 안에서 끝나고, 파일 이름과 곡 제목도 전송되지 않습니다. 서버로 가는 것은 ⑴ 로그인한 경우의 계정 식별자·이메일·설정 백업, ⑵ 동의한 경우의 사용 통계(로그인하지 않았다면 익명, 로그인 중에는 계정에 연결됩니다) 두 가지뿐이며, 둘 다 선택이고 언제든 끄거나 지울 수 있습니다. 서버는 Supabase이고 데이터는 서울 리전에 저장됩니다. 자세한 항목은 위 '5. 프라이버시 요지'와 개인정보 처리방침에 있습니다.</p>
+<p>오디오는 어디로도 가지 않습니다 — 처리 전 과정이 사용자의 맥 안에서 끝나고, 파일 이름과 곡 제목도 전송되지 않습니다. 서버로 가는 것은 ⑴ 로그인한 경우의 계정 식별자·이메일·설정 백업, ⑵ 동의한 경우의 사용 통계(로그인하지 않았다면 익명, 로그인 중에는 계정에 연결됩니다) 두 가지뿐이며, 둘 다 선택이고 언제든 끄거나 지울 수 있습니다. 서버는 Supabase이고 데이터는 호주(시드니) 리전(ap-southeast-2)에 저장됩니다. 자세한 항목은 위 '5. 프라이버시 요지'와 개인정보 처리방침에 있습니다.</p>
 </blockquote>
 
 <h4>Q. 구독이 아니라 1회 구매인 이유는?</h4>
@@ -234,8 +234,8 @@
 <h3>5. Privacy in short</h3>
 <ul>
   <li><strong>Audio is local only.</strong> Audio files, recordings and results are never sent to a server under any circumstances, and every processing step (stem separation, pitch correction, noise and reverb removal, mixing, mastering) runs on the user's Mac. File names and song titles are not transmitted either.</li>
-  <li><strong>Sign-in is optional.</strong> Every feature works without an account; signing in is only used to back up settings and preferences.</li>
-  <li><strong>Usage statistics are opt-in.</strong> Choosing "Don't send" on the first-launch consent screen means nothing is ever transmitted, and it can be turned off later at any time — doing so also deletes anything still queued on the device. The values sent are only non-identifying numbers, booleans and in-app screen names.</li>
+  <li><strong>Sign-in is optional.</strong> Every feature works without an account. Signing in is used to back up settings and preferences, and <strong>usage-statistics events sent while signed in carry the account identifier</strong> (unlinked when the account is deleted in the app).</li>
+  <li><strong>Usage statistics are opt-in.</strong> Choosing "Don't send" on the first-launch consent screen means nothing is ever transmitted, and it can be turned off later at any time — doing so also deletes anything still queued on the device. The values sent are only non-identifying numbers, booleans and in-app screen names, and they are anonymous while signed out.</li>
   <li><strong>No ad identifiers, no tracking</strong>, and no selling or sharing of data with third parties for advertising.</li>
   <li><strong>No subscription.</strong> There is a single non-consumable in-app purchase, and Apple handles the payment itself (the developer receives no amounts, transaction IDs or account details).</li>
   <li>Account info and settings backups can be erased instantly with the in-app "Delete account" button.</li>
@@ -291,7 +291,7 @@
 
 <h4>Q. Where does my data go?</h4>
 <blockquote>
-<p>Audio goes nowhere — the entire processing chain finishes on the user's Mac, and file names and song titles are not transmitted. The only things that reach a server are (1) the account identifier, email and settings backup if you sign in, and (2) usage statistics if you consent (anonymous while signed out, linked to your account while signed in). Both are optional and can be turned off or deleted at any time. The server is Supabase and the data is stored in the Seoul region. Details are in "5. Privacy in short" above and in the privacy policy.</p>
+<p>Audio goes nowhere — the entire processing chain finishes on the user's Mac, and file names and song titles are not transmitted. The only things that reach a server are (1) the account identifier, email and settings backup if you sign in, and (2) usage statistics if you consent (anonymous while signed out, linked to your account while signed in). Both are optional and can be turned off or deleted at any time. The server is Supabase and the data is stored in the Sydney, Australia region (ap-southeast-2). Details are in "5. Privacy in short" above and in the privacy policy.</p>
 </blockquote>
 
 <h4>Q. Why a one-time purchase instead of a subscription?</h4>
