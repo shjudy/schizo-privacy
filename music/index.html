@@ -62,5 +62,18 @@
   </p>
 
 </div>
+<script>
+/* 인스타그램·페이스북 인앱 브라우저는 apps.apple.com의 앱스토어 점프를 자주 삼킨다.
+   그 웹뷰 안에서만 itms-appss:// 스킴으로 바꿔 쏴 App Store 앱을 직접 연다. */
+(function(){
+  if(!/Instagram|FBAN|FBAV|FB_IAB/i.test(navigator.userAgent)) return;
+  document.querySelectorAll('a[href^="https://apps.apple.com"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      location.href = a.href.replace(/^https:\/\//, 'itms-appss://');
+    });
+  });
+})();
+</script>
 </body>
 </html>
