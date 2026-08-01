@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Schizo — 프레스룸 / Press Room</title>
+<title>Shyun.D — 프레스룸 / Press Room</title>
 <style>
   :root { color-scheme: light dark; }
   body {
@@ -52,13 +52,14 @@
 </style>
 </head>
 <body>
-<h1>Schizo — 프레스룸 / Press Room</h1>
-<p class="updated">최종 수정 / Last updated: 2026-07-26 · 기준 버전 / Version: 1.0.7</p>
-<!-- ⚠️ 2.0 승인 시 함께 고칠 것: <title>·<h1>의 "Schizo" → "Shyun.D", 본문 SCHIZO 표기,
-     그리고 이 줄의 기준 버전. 앱스토어 링크는 ID 기반이라 개명돼도 그대로 작동한다. -->
+<h1>Shyun.D — 프레스룸 / Press Room</h1>
+<p class="updated">최종 수정 / Last updated: 2026-08-01 · 기준 버전 / Version: 3.0</p>
+<!-- 표기 규약: 스토어 이름 = Shyun.D(3.0에서 개명) · 앱 안 세계관 이름 = SCHIZO(유지).
+     본문의 SCHIZO는 세계관·제품 서술이라 그대로 두고, 스토어 정체성(제목·사실 관계)만 Shyun.D로 쓴다.
+     앱스토어 링크는 ID 기반이라 개명과 무관하게 작동한다. -->
 
 <h2>한국어</h2>
-<p class="callout"><strong>SCHIZO는 방에서 혼자 녹음한 노래를 음원으로 만드는 맥용 보컬 제작 도구입니다.</strong> 스템 분리부터 음정·음색·화음·믹스·마스터링까지, 모든 오디오 처리는 사용자의 맥 안에서 끝납니다.</p>
+<p class="callout"><strong>Shyun.D는 방에서 혼자 녹음한 노래를 음원으로 만드는 맥용 보컬 제작 도구입니다.</strong> 키 변경·스템 분리부터 음정·음색·화음·믹스·마스터링까지, 모든 오디오 처리는 사용자의 맥 안에서 끝납니다. 앱 안 세계관의 이름은 SCHIZO입니다.</p>
 
 <p class="getit">
   <a href="https://apps.apple.com/app/id6787841675">맥 앱스토어에서 보기 →</a>
@@ -67,12 +68,15 @@
 
 <h3>1. 무엇을 하는 앱인가</h3>
 <ul>
+  <li>반주의 키를 내 목에 맞게 반음 단위로 바꿉니다(빠르기는 그대로, 연습용 배속).</li>
   <li>음원을 보컬과 반주로 분리합니다(온디바이스 AI 스템 분리, 4스템).</li>
   <li>원곡과 비교해 가창을 진단하고, 피아노롤에서 음정을 고칩니다.</li>
   <li>목소리의 살결·톤·숨을 실시간으로 성형하고, 잡음·입소리·방 울림·클리핑을 정리합니다.</li>
   <li>곡의 키를 읽어 화음을 쌓습니다(전조 자동 감지).</li>
   <li>더블링·합창·공간·밀도를 입혀 믹스로 만듭니다(실시간 미리듣기 + 오토메이션 곡선).</li>
   <li>상용 음원의 톤과 음량을 목표로 마스터링하고, 상용 색과 내 색깔을 나란히 듣고 고릅니다.</li>
+  <li>녹음을 손보는 <strong>처치실</strong> — 파형에서 구간 잘라내기·무음·게인·페이드, 틀린 소절만 마이크로 다시 부르는 펀치인.</li>
+  <li>완성본을 세로 영상(1080×1920 mp4)으로 내보내 폰에서 그대로 공유합니다.</li>
   <li>모든 작업은 비파괴 타임라인('진료 기록')에 남아, 어떤 버전이든 그 시점 설정 그대로 되불러 이어 만질 수 있습니다.</li>
   <li>처음 쓰는 사람을 위한 <strong>간편 모드</strong> — 파일 하나, 노브 하나, 버튼 하나.</li>
 </ul>
@@ -113,6 +117,7 @@
   <li><strong>오디오는 로컬 온리입니다.</strong> 오디오 파일·녹음·작업 결과물은 어떤 경우에도 서버로 전송되지 않고, 모든 처리(스템 분리, 피치 보정, 잡음·잔향 제거, 믹싱, 마스터링)는 사용자의 맥 안에서 실행됩니다. 파일 이름과 곡 제목도 전송되지 않습니다.</li>
   <li><strong>로그인은 선택</strong>입니다. 계정 없이 모든 기능을 쓸 수 있습니다. 로그인은 설정·취향 백업에 쓰이고, <strong>로그인한 상태에서 보낸 사용 통계 이벤트에는 계정 식별자가 함께 붙습니다</strong>(앱 내 '계정 삭제' 시 연결 해제).</li>
   <li><strong>사용 통계는 옵트인</strong>입니다. 첫 실행 동의 화면에서 '보내지 않기'를 고르면 한 건도 전송되지 않으며, 동의한 뒤에도 언제든 끌 수 있고 끄면 기기에 남아 있던 대기분까지 삭제됩니다. 보내는 값은 비식별 숫자·불리언·앱 내부 화면 이름뿐이며, 로그인하지 않았다면 익명입니다.</li>
+  <li><strong>마이크는 선택입니다.</strong> 처치실의 '다시 부르기(펀치인)'를 쓸 때만 녹음하며, 그 녹음도 다른 오디오와 똑같이 맥 밖으로 나가지 않습니다.</li>
   <li><strong>광고 식별자·추적을 쓰지 않고</strong>, 데이터를 제3자에게 판매하거나 광고 목적으로 제공하지 않습니다.</li>
   <li><strong>구독이 없습니다.</strong> 결제는 비소모성 인앱 결제 1종뿐이고, 결제 자체는 Apple이 처리합니다(개발자는 금액·거래 번호·계정 정보를 받지 않습니다).</li>
   <li>계정 정보와 설정 백업은 앱 안의 '계정 삭제' 버튼으로 즉시 지울 수 있습니다.</li>
@@ -122,16 +127,17 @@
 <h3>6. 사실 관계</h3>
 <div class="tablewrap">
 <table>
-  <tr><th>앱 이름</th><td>Schizo</td></tr>
+  <tr><th>앱 이름</th><td><strong>Shyun.D</strong> — 3.0에서 개명(구명 Schizo). 앱 안 세계관의 이름은 SCHIZO로 유지</td></tr>
   <tr><th>플랫폼</th><td>macOS · Mac App Store 단독 배포 (번들 ID <code>com.shjudy.schizoapp</code>)</td></tr>
   <tr><th>요구 사양</th><td>macOS 14.0(소노마) 이상 · Apple 실리콘 맥(arm64)</td></tr>
   <tr><th>카테고리</th><td>음악</td></tr>
   <tr><th>연령 등급</th><td>12+</td></tr>
   <tr><th>가격 구조</th><td><strong>무료 + 1회 구매</strong> — 무료로 모든 기능을 쓸 수 있고 완성본(믹스·마스터) 저장이 한 곡으로 제한됩니다. 저장 무제한은 비소모성 인앱 결제 1회로 열립니다. <strong>구독 없음.</strong> (금액은 스토어 표시가를 확인해 주세요)</td></tr>
   <tr><th>언어</th><td>한국어 · English — 앱 헤더에서 언제든 전환</td></tr>
-  <tr><th>출시일</th><td>1.0 — 2026-07-05</td></tr>
-  <tr><th>기준 버전</th><td>1.0.4</td></tr>
-  <tr><th>네트워크</th><td>오디오 무전송. 유일한 통신은 ⑴ 선택 로그인, ⑵ 옵트인 사용 통계, ⑶ 방 울림 제거를 처음 켤 때 신경망 모델 파일 1회 다운로드(약 53MB · HTTPS · SHA-256 검증). 이 기능을 켜지 않으면 앱은 완전 오프라인으로 동작합니다</td></tr>
+  <tr><th>출시일</th><td>1.0 — 2026-07-14 (App Store 공개)</td></tr>
+  <tr><th>기준 버전</th><td>3.0 — 2026-07-30</td></tr>
+  <tr><th>네트워크</th><td>오디오 무전송. 유일한 통신은 ⑴ 선택 로그인, ⑵ 옵트인 사용 통계, ⑶ 복원(잡음·방 울림 제거)을 처음 켤 때 신경망 모델 파일 1회 다운로드(HTTPS · SHA-256 검증). 이 기능을 켜지 않으면 앱은 완전 오프라인으로 동작합니다</td></tr>
+  <tr><th>권한</th><td>마이크(선택) — 처치실 '다시 부르기'에서만 사용, 녹음은 로컬 보관</td></tr>
   <tr><th>접근성·배려</th><td>차분 모드(연출 전면 차단) · 온보딩 건너뛰기 · 키보드·보이스오버 이동 · 광과민 배려(모션 줄이기 연동)</td></tr>
   <tr><th>개발</th><td>1인 개발</td></tr>
 </table>
@@ -141,6 +147,7 @@
 
 <h4>Q. 앱 이름이 왜 SCHIZO인가요? 영어권에서는 멸칭입니다.</h4>
 <blockquote>
+<p>먼저 사실 하나 — 3.0부터 스토어에 표시되는 앱 이름은 만든 사람의 서명인 <strong>Shyun.D</strong>이고, SCHIZO는 앱 안 세계관의 이름으로 남아 있습니다. 아래는 그 세계관 이름에 대한 답입니다.</p>
 <p>알고 골랐습니다. 그리고 그 사실이 이 답변에서 가장 중요한 부분입니다.</p>
 <p>저는 조현병 당사자는 아닙니다. 다만 정신질환으로 분류되는 병으로 10년 넘게 상담과 치료를 받아왔습니다. 그동안 이상하게 느낀 것이 하나 있습니다 — 다른 병은 앓는다고 말할 수 있는데, 이 계열의 병만은 다들 숨기기에 급급하다는 것이었습니다. 병 자체보다 병을 말할 수 없다는 쪽이 더 무겁게 느껴질 때가 있었습니다.</p>
 <p>그래서 이런 생각을 했습니다. 이 단어가 긍정도 부정도 아닌, 그냥 "아, 그 병을 앓는 사람이구나" 정도로 들리게 되면 어떨까. 암 환자라는 말처럼요. 이름에 그 단어를 얹어 보면 조금이나마 그 방향으로 밀 수 있지 않을까 싶었습니다.</p>
@@ -161,7 +168,7 @@
 <h4>Q. AI를 쓰나요?</h4>
 <blockquote>
 <p>씁니다. 어디에 쓰는지는 앱의 계정 화면에 있는 고지 문서에 전부 공개돼 있습니다.</p>
-<p>⑴ <strong>오디오</strong> — 스템 분리는 오픈소스 모델 htdemucs(Demucs v4, Meta AI, MIT)를 Core ML로 변환해 <strong>기기 안에서</strong> 돌리고, 방 울림 제거도 신경망 모델을 내려받아 <strong>기기 안에서</strong> 돌립니다. 사용자의 오디오는 학습에 쓰이지 않고, 서버로 가지 않습니다.</p>
+<p>⑴ <strong>오디오</strong> — 스템 분리는 오픈소스 모델 htdemucs(Demucs v4, Meta AI, MIT)를 Core ML로 변환해 <strong>기기 안에서</strong> 돌리고, 잡음·방 울림 제거(복원)도 신경망 모델을 내려받아 <strong>기기 안에서</strong> 돌립니다. 사용자의 오디오는 학습에 쓰이지 않고, 서버로 가지 않습니다.</p>
 <p>⑵ <strong>아트</strong> — 캐릭터 아트·온보딩/배경 이미지·퍼즐 조각은 생성형 이미지 도구로 제작한 뒤 직접 선별·크롭·리터치했습니다. 제3자의 기존 저작물을 가져온 것은 없습니다. 서명 글씨도 같은 방식으로 만들었습니다. UI 사운드 3종은 외부 샘플 없는 합성 톤이며, 장르 타겟 데이터·정보 카드 문안·프리셋은 자체 제작입니다.</p>
 <p>⑶ <strong>목소리</strong> — 이 앱은 목소리를 만들어 내지 않습니다. 남의 목소리를 흉내 내거나 이식하는 기능은 없고, 처리 대상은 사용자가 실제로 부른 소리뿐입니다('곁 목소리'도 사용자 본인 테이크에서 파생됩니다).</p>
 </blockquote>
@@ -189,7 +196,7 @@
 <p><strong>자살예방 상담전화 ☎109</strong> · <strong>정신건강 위기상담 ☎1577-0199</strong> — 둘 다 24시간, 전국 어디서나.</p>
 
 <h2>English</h2>
-<p class="callout"><strong>SCHIZO is a Mac app that turns a song recorded alone in a room into a finished record</strong> — stems, pitch, tone, harmonies, mix and master. All audio processing stays on the user's Mac.</p>
+<p class="callout"><strong>Shyun.D is a Mac app that turns a song recorded alone in a room into a finished record</strong> — key change, stems, pitch, tone, harmonies, mix and master. All audio processing stays on the user's Mac. The world inside the app is named SCHIZO.</p>
 
 <p class="getit">
   <a href="https://apps.apple.com/app/id6787841675">View on the Mac App Store →</a>
@@ -198,12 +205,15 @@
 
 <h3>1. What the app does</h3>
 <ul>
+  <li>Shifts a backing track's key to fit your voice, semitone by semitone (tempo intact, with practice speeds).</li>
   <li>Splits a track into vocals and instrumental (on-device AI stem separation, 4 stems).</li>
   <li>Diagnoses a take against the original and lets you fix notes on a piano roll.</li>
   <li>Reshapes the texture, tone and breath of a voice in real time, and clears noise, mouth sounds, room reverb and clipping.</li>
   <li>Reads the key of a song and stacks harmonies (key changes detected automatically).</li>
   <li>Builds a mix with doubles, choir, space and density (real-time preview plus automation curves).</li>
   <li>Masters toward the tone and loudness of commercial records, and lets you hear a commercial color and your own side by side before choosing.</li>
+  <li>A <strong>clinic</strong> for repairing takes — cut, silence, gain and fades on the waveform, plus punch-in to re-sing just the line you missed.</li>
+  <li>Exports the finished track as a vertical video (1080×1920 mp4), ready to share from a phone.</li>
   <li>Every step is kept on a non-destructive timeline (the "chart"), so any version can be recalled with its exact settings and worked on further.</li>
   <li><strong>Simple Mode</strong> for first-timers — one file, one knob, one button.</li>
 </ul>
@@ -244,6 +254,7 @@
   <li><strong>Audio is local only.</strong> Audio files, recordings and results are never sent to a server under any circumstances, and every processing step (stem separation, pitch correction, noise and reverb removal, mixing, mastering) runs on the user's Mac. File names and song titles are not transmitted either.</li>
   <li><strong>Sign-in is optional.</strong> Every feature works without an account. Signing in is used to back up settings and preferences, and <strong>usage-statistics events sent while signed in carry the account identifier</strong> (unlinked when the account is deleted in the app).</li>
   <li><strong>Usage statistics are opt-in.</strong> Choosing "Don't send" on the first-launch consent screen means nothing is ever transmitted, and it can be turned off later at any time — doing so also deletes anything still queued on the device. The values sent are only non-identifying numbers, booleans and in-app screen names, and they are anonymous while signed out.</li>
+  <li><strong>The microphone is optional.</strong> It records only when you use the clinic's punch-in ("sing it again"), and that recording stays on the Mac like every other piece of audio.</li>
   <li><strong>No ad identifiers, no tracking</strong>, and no selling or sharing of data with third parties for advertising.</li>
   <li><strong>No subscription.</strong> There is a single non-consumable in-app purchase, and Apple handles the payment itself (the developer receives no amounts, transaction IDs or account details).</li>
   <li>Account info and settings backups can be erased instantly with the in-app "Delete account" button.</li>
@@ -253,16 +264,17 @@
 <h3>6. Fact sheet</h3>
 <div class="tablewrap">
 <table>
-  <tr><th>Name</th><td>Schizo</td></tr>
+  <tr><th>Name</th><td><strong>Shyun.D</strong> — renamed in 3.0 (formerly Schizo). The world inside the app keeps the name SCHIZO</td></tr>
   <tr><th>Platform</th><td>macOS · Mac App Store only (bundle ID <code>com.shjudy.schizoapp</code>)</td></tr>
   <tr><th>Requirements</th><td>macOS 14.0 (Sonoma) or later · Apple silicon Mac (arm64)</td></tr>
   <tr><th>Category</th><td>Music</td></tr>
   <tr><th>Age rating</th><td>12+</td></tr>
   <tr><th>Pricing</th><td><strong>Free with a one-time purchase</strong> — every feature is free to use, with saving finished tracks (mix and master) limited to one song. Unlimited saving is unlocked by a single non-consumable in-app purchase. <strong>No subscription.</strong> (Please check the store listing for the current price.)</td></tr>
   <tr><th>Languages</th><td>Korean · English — switchable anytime from the app header</td></tr>
-  <tr><th>Released</th><td>1.0 — 2026-07-05</td></tr>
-  <tr><th>Current version</th><td>1.0.4</td></tr>
-  <tr><th>Network</th><td>No audio is ever transmitted. The only network activity is (1) optional sign-in, (2) opt-in usage statistics, and (3) a one-time download of a neural model file the first time room-reverb removal is switched on (about 53 MB · HTTPS · SHA-256 verified). Without that feature the app runs fully offline.</td></tr>
+  <tr><th>Released</th><td>1.0 — 2026-07-14 (App Store)</td></tr>
+  <tr><th>Current version</th><td>3.0 — 2026-07-30</td></tr>
+  <tr><th>Network</th><td>No audio is ever transmitted. The only network activity is (1) optional sign-in, (2) opt-in usage statistics, and (3) a one-time download of neural model files the first time restoration (noise and room-reverb removal) is switched on (HTTPS · SHA-256 verified). Without that feature the app runs fully offline.</td></tr>
+  <tr><th>Permissions</th><td>Microphone (optional) — used only by the clinic's punch-in; recordings stay local</td></tr>
   <tr><th>Accessibility</th><td>Calm Mode (all narrative effects off) · skippable onboarding · keyboard and VoiceOver navigation · photosensitivity care (follows Reduce Motion)</td></tr>
   <tr><th>Team</th><td>One developer</td></tr>
 </table>
@@ -272,6 +284,7 @@
 
 <h4>Q. Why is the app called SCHIZO? In English that word is a slur.</h4>
 <blockquote>
+<p>One fact first — since 3.0, the name shown on the App Store is <strong>Shyun.D</strong>, the maker's signature; SCHIZO remains the name of the world inside the app. What follows is the answer about that world's name.</p>
 <p>I chose it knowingly. That is the most important thing in this answer.</p>
 <p>I do not have schizophrenia. What I do have is an illness that is classified as a mental illness, and more than ten years of counseling and treatment for it. Over those years one thing kept striking me as strange: people can say out loud that they have other illnesses, but with this family of illnesses almost everyone is busy hiding it. There were stretches where not being able to say it sat heavier than the illness did.</p>
 <p>So I had a thought. What if this word could become ordinary — not a compliment, not an insult, just "ah, that is someone who has that illness," the way "cancer patient" lands. I thought that putting the word on a title might push a little in that direction.</p>
@@ -292,7 +305,7 @@
 <h4>Q. Do you use AI?</h4>
 <blockquote>
 <p>Yes, and where it is used is fully disclosed in the notices document reachable from the app's account screen.</p>
-<p>(1) <strong>Audio</strong> — stem separation runs the open-source htdemucs model (Demucs v4, Meta AI, MIT) converted to Core ML, <strong>on the device</strong>; room-reverb removal downloads a neural model and also runs it <strong>on the device</strong>. User audio is never used for training and never leaves the Mac.</p>
+<p>(1) <strong>Audio</strong> — stem separation runs the open-source htdemucs model (Demucs v4, Meta AI, MIT) converted to Core ML, <strong>on the device</strong>; restoration (noise and room-reverb removal) downloads neural models and also runs them <strong>on the device</strong>. User audio is never used for training and never leaves the Mac.</p>
 <p>(2) <strong>Art</strong> — character art, onboarding and background images and puzzle pieces were produced with generative image tools, then selected, cropped and retouched by hand. No existing third-party work was taken. The signature lettering was made the same way. The three UI sounds are synthesized tones with no external samples, and the genre target data, information-card copy and presets are all made in-house.</p>
 <p>(3) <strong>Voice</strong> — the app does not generate voices. There is no feature that imitates or transplants someone else's voice; the only thing processed is what the user actually sang (even the "side voice" is derived from the user's own take).</p>
 </blockquote>
