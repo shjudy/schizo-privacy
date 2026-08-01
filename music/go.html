@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>App Store로 이동 중…</title>
+<style>
+  body { background:#0a0a0c; color:#e8e8ea; font-family:-apple-system,"Apple SD Gothic Neo",sans-serif;
+         min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center;
+         padding:32px; text-align:center; line-height:1.8; }
+  a.big { display:inline-block; margin-top:18px; padding:12px 22px; border:1px solid #4a4a52;
+          border-radius:12px; color:#fff; text-decoration:none; font-weight:700; }
+  .hint { color:#8b8b93; font-size:13.5px; margin-top:26px; max-width:320px; }
+</style>
+</head>
+<body>
+<p id="msg">App Store로 이동 중…</p>
+<div id="manual" style="display:none">
+  <a class="big" id="storeLink" href="#">App Store에서 열기 →</a>
+  <p class="hint">버튼이 반응하지 않으면 — 화면 우측 상단 <strong>⋯ 메뉴</strong>를 눌러
+  <strong>'외부 브라우저로 열기'</strong>를 선택하면 확실하게 열립니다.</p>
+</div>
+<script>
+(function(){
+  var m = location.search.match(/[?&]p=([^&]+)/);
+  var path = m ? decodeURIComponent(m[1]) : "";
+  // 화이트리스트: apps.apple.com 경로 형식만 (오픈 리다이렉트 방지)
+  if(!/^([a-z]{2}\/)?app\/[a-z0-9._-]*\/?id\d+$/i.test(path)){ location.replace("./"); return; }
+  var web  = "https://apps.apple.com/" + path;
+  var itms = "itms-appss://apps.apple.com/" + path;
+  document.getElementById("storeLink").href = web;
+  // 1차: 앱스토어 스킴 → 400ms 안에 못 떠나면 2차: 웹 → 1.6초에도 남아 있으면 수동 안내
+  location.href = itms;
+  setTimeout(function(){ location.href = web; }, 400);
+  setTimeout(function(){
+    document.getElementById("msg").textContent = "자동 이동이 막힌 것 같아요.";
+    document.getElementById("manual").style.display = "block";
+  }, 1600);
+})();
+</script>
+</body>
+</html>

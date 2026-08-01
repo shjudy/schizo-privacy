@@ -62,15 +62,20 @@
   </p>
 
 </div>
+<p class="foot" id="iab-hint" hidden>인스타그램 안 브라우저에서는 앱스토어 연결이 막힐 수 있어요 —<br>
+화면 우측 상단 <strong>⋯ 메뉴 → '외부 브라우저로 열기'</strong>가 가장 확실합니다.</p>
 <script>
-/* 인스타그램·페이스북 인앱 브라우저는 apps.apple.com의 앱스토어 점프를 자주 삼킨다.
-   그 웹뷰 안에서만 itms-appss:// 스킴으로 바꿔 쏴 App Store 앱을 직접 연다. */
+/* 인스타·페북 인앱 브라우저는 apps.apple.com 링크 클릭과 커스텀 스킴을 모두 삼킨다(실측).
+   우회 = 같은 도메인 중간 페이지(go.html) 경유 — 자기 도메인 이동은 못 막고,
+   go.html이 스킴→웹 순서로 다시 쏜다. 일반 브라우저는 원래 링크 그대로. */
 (function(){
   if(!/Instagram|FBAN|FBAV|FB_IAB/i.test(navigator.userAgent)) return;
+  document.getElementById('iab-hint').hidden = false;
   document.querySelectorAll('a[href^="https://apps.apple.com"]').forEach(function(a){
     a.addEventListener('click', function(e){
       e.preventDefault();
-      location.href = a.href.replace(/^https:\/\//, 'itms-appss://');
+      var p = a.href.replace(/^https:\/\/apps\.apple\.com\//, '');
+      location.href = 'go.html?p=' + encodeURIComponent(p);
     });
   });
 })();
