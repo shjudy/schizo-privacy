@@ -25,9 +25,15 @@
   var path = m ? decodeURIComponent(m[1]) : "";
   // 화이트리스트: apps.apple.com 경로 형식만 (오픈 리다이렉트 방지)
   if(!/^([a-z]{2}\/)?app\/[a-z0-9._-]*\/?id\d+$/i.test(path)){ location.replace("./"); return; }
-  var web   = "https://apps.apple.com/" + path;
-  var web2  = "https://itunes.apple.com/" + path;   // 구 도메인 — 차단 목록 밖일 수 있음
-  var itms  = "itms-appss://apps.apple.com/" + path;
+  // 캠페인 토큰(Q1 — 3회차) — ASC 캠페인 링크의 pt/ct/mt만 통과(그 외 쿼리는 버린다).
+  // 화이트리스트 통과 "후" 재부착이라 오픈 리다이렉트 면적 불변.
+  var tm = location.search.match(/[?&]t=([^&]+)/);
+  var tok = tm ? decodeURIComponent(tm[1]) : "";
+  if(!/^pt=\d+(&ct=[A-Za-z0-9._-]+)?(&mt=\d+)?$/.test(tok)) tok = "";
+  var q = tok ? "?" + tok : "";
+  var web   = "https://apps.apple.com/" + path + q;
+  var web2  = "https://itunes.apple.com/" + path + q;   // 구 도메인 — 차단 목록 밖일 수 있음
+  var itms  = "itms-appss://apps.apple.com/" + path + q;
   var a = document.getElementById("storeLink");
   a.href = web;
   // 버튼 = 사용자 제스처 컨텍스트에서 스킴 → 구 도메인 → 신 도메인 순서로 재발사

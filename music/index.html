@@ -38,6 +38,16 @@
   <img class="sig" src="sig.png" alt="Shyun.D">
   <p class="tag">방에서 혼자 부른 노래를, 음원으로.<br>그 도구를 직접 만듭니다.</p>
 
+  <!-- 듣기 절 — DistroKid 발매 확정 시 주석 해제 + 링크 채우기(메타 3회차 P0-9 선제작).
+       "준비 중" 노출 금지 관례: 확정 전엔 주석으로 잠근다. 링크는 발매 후 스마트링크
+       (또는 유튜브뮤직/애플뮤직 개별)로 교체.
+  <a class="card" href="LISTEN_URL_HERE">
+    <span class="name">사랑해서 그랬어 — Shyun.D</span><span class="plat">첫 곡 · 듣기</span>
+    <p class="desc">작사·노래 시현, 작곡 Suno. 이 페이지의 도구들로 방에서 만든 첫 음원입니다.</p>
+    <p class="go">듣으러 가기 →</p>
+  </a>
+  -->
+
   <a class="card" href="https://apps.apple.com/kr/app/id6794339509">
     <span class="name">투티 Tutti — 내 안의 합창단</span><span class="plat">iPhone</span>
     <p class="desc">부른 노래의 구간을 골라 내 목소리로 화음을 세우고, 반주 키를 내 키로 바꿔 부릅니다.</p>
@@ -74,8 +84,11 @@
   document.querySelectorAll('a[href^="https://apps.apple.com"]').forEach(function(a){
     a.addEventListener('click', function(e){
       e.preventDefault();
-      var p = a.href.replace(/^https:\/\/apps\.apple\.com\//, '');
-      location.href = 'go.html?p=' + encodeURIComponent(p);
+      var u = a.href.replace(/^https:\/\/apps\.apple\.com\//, '');
+      var qi = u.indexOf('?');
+      var p = qi < 0 ? u : u.slice(0, qi);
+      var t = qi < 0 ? '' : u.slice(qi + 1);
+      location.href = 'go.html?p=' + encodeURIComponent(p) + (t ? '&t=' + encodeURIComponent(t) : '');
     });
   });
 })();
