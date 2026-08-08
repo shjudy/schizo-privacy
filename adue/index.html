@@ -36,6 +36,13 @@
       리전)에 저장됩니다. 서버에는 커플 코드의 해시와 암호문만 있으며, <strong>코드를 모르는 누구도 —
       개발자와 서버 운영사를 포함해 — 내용을 읽을 수 없습니다.</strong></li>
   <li>사진은 연결해도 전송되지 않습니다(각자 기기에만).</li>
+  <li><strong>달력의 「내 폰 일정 겹쳐 보기」(1.5)</strong>는 이 아이폰의 캘린더를 <strong>읽기만</strong> 합니다.
+      읽은 일정은 화면에 그리는 데만 쓰이고 <strong>저장하지도, 서버로 보내지도, 상대에게 보이지도 않습니다.</strong>
+      기본은 꺼져 있고 켤 때만 권한을 묻습니다. (애플이 이벤트 읽기 전용 접근 API를 제공하지 않아
+      권한 요청은 전체 접근으로 뜨지만, 앱은 캘린더에 <strong>쓰지 않습니다</strong> — 일정을 만들거나 고치거나 지우는
+      코드가 없습니다.)</li>
+  <li>달력에 직접 적는 일정은 「함께」와 「내 일정」으로 나뉘고, <strong>둘 다 상대에게 보입니다</strong>(그게 이 기능의 목적입니다).
+      저장·전송 방식은 기존 약속과 같습니다 — 기기에서 암호화된 뒤 중계됩니다. 위의 「겹쳐 보기」와는 다른 것입니다.</li>
   <li>시그널("보고싶어" 등)도 같은 방식입니다 — 기기에서 암호화된 뒤 중계되며, 서버는 어떤 시그널을
       보냈는지 알 수 없습니다.</li>
   <li>시그널 알림을 켜면, 상대의 마음이 기다리지 않고 도착하도록 <strong>기기의 알림 주소(APNs 토큰)</strong>가
@@ -62,6 +69,14 @@ before being relayed through our server (Supabase, Sydney region); the server ho
 your couple code and the ciphertext — no one without the code, including us, can read it. Photos are
 never uploaded. Signals ("miss you" etc.) travel the same way — encrypted on-device, unreadable to
 the server.</p>
+
+<p><strong>Calendar (1.5).</strong> The optional "Show my phone's events" layer <strong>only reads</strong> this
+iPhone's calendar to draw it on screen. Those events are <strong>never stored, never uploaded, and never shown
+to your partner.</strong> It is off by default and asks for permission only when you turn it on. (Apple provides
+no read-only access to events, so the prompt says full access — but the app <strong>never writes</strong> to your
+calendar; there is no code that creates, edits or deletes events.) Plans you type into the app are a different
+thing: whether marked "Together" or "Mine", <strong>your partner sees them</strong> — that is the point of the
+feature — and they travel the same encrypted path as before.</p>
 
 <p>If you turn on signal notifications, your <strong>device's notification address (APNs token)</strong>
 is stored alongside the hash of your couple code so a signal can arrive without waiting. That address
