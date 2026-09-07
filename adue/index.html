@@ -16,12 +16,13 @@
 </head>
 <body>
 <h1>아두에 A DUE — 개인정보 처리방침</h1>
-<p class="updated">최종 수정 / Last updated: 2026-07-31</p>
+<p class="updated">최종 수정 / Last updated: 2026-09-06</p>
 
 <p><strong>요약: 아두에는 당신이 누구인지 알지 못합니다.</strong>
 계정도, 로그인도, 광고도, 분석 도구도 없습니다. 연애 기록은 당신의 아이폰에 저장됩니다.
-커플 연결을 켜지 않으면 아무것도 서버로 가지 않고, 켜더라도 서버를 지나는 것은 읽을 수 없는
-암호문과 알림 주소뿐입니다(2절).</p>
+커플 연결을 켜지 않으면 여러분의 기록은 아무것도 서버로 가지 않고, 켜더라도 서버를 지나는 것은
+읽을 수 없는 암호문과 알림 주소뿐입니다(2절). 연결 여부와 무관하게 앱이 스스로 하는 통신은
+<strong>장애 공지 파일 한 개를 읽어 오는 것</strong>뿐이며 올라가는 것은 없습니다(2절).</p>
 
 <h2>1. 수집하는 정보 — 없음 (커플 연결을 켜지 않는 한)</h2>
 <ul>
@@ -31,7 +32,10 @@
 
 <h2>2. 커플 연결(선택)을 켠 경우</h2>
 <ul>
-  <li>연결은 선택 기능입니다 — 켜지 않으면 네트워크 통신 자체가 없습니다.</li>
+  <li>연결은 선택 기능입니다 — 켜지 않으면 <strong>여러분의 기록은 한 줄도 나가지 않습니다.</strong>
+      다만 앱은 열릴 때마다 <strong>장애 공지 파일 한 개</strong>(이 방침을 서비스하는 같은 주소의 정적 JSON)를
+      읽어 옵니다 — 동기화 서버가 멈췄을 때 앱이 침묵하지 않으려는 용도입니다. 쿼리 문자열·쿠키·요청 본문이
+      없고 계정·기기 식별자도 실리지 않으며, <strong>올라가는 것은 한 바이트도 없습니다.</strong></li>
   <li>연결하면 사귄 날·이름·기념일·테마와 약속·버킷 리스트·러브 랭귀지가 <strong>기기에서 암호화된 뒤</strong> 중계 서버(Supabase, 호주 시드니
       리전)에 저장됩니다. 서버에는 커플 코드의 해시와 암호문만 있으며, <strong>코드를 모르는 누구도 —
       개발자와 서버 운영사를 포함해 — 내용을 읽을 수 없습니다.</strong></li>
@@ -72,18 +76,27 @@
 
 <h2>English</h2>
 <p><strong>A DUE does not know who you are.</strong> No account, no sign-in, no ads, no analytics.
-Your story is stored on your iPhone. Pairing is optional — without it the app makes no network
-requests at all. If you pair, your dates, anniversaries, plans, bucket list and love language are <strong>encrypted on-device</strong>
+Your story is stored on your iPhone. Pairing is optional — without it <strong>none of your records leave
+the phone</strong>. (The app does fetch one small static notice file from the same site that serves this
+policy, so it can tell you when the sync service is down: a plain GET with no query string, no cookies,
+no body and no account or device identifier — nothing is uploaded.) If you pair, your dates, anniversaries,
+plans, bucket list and love language are <strong>encrypted on-device</strong>
 before being relayed through our server (Supabase, Sydney region); the server holds only a hash of
-your couple code and the ciphertext — no one without the code, including us, can read it. Photos are
-never uploaded. Signals ("miss you" etc.) travel the same way — encrypted on-device, unreadable to
-the server.</p>
+your couple code and the ciphertext — no one without the code, including us, can read it.
+<strong>Photos:</strong> the original always stays on each iPhone. The downscaled copy that travels to your
+partner is encrypted on-device before it passes through our server, which keeps at most 400 per couple and
+clears the oldest first; ticket and booking captures attached to a plan share that same store and cap.
+"Erase from server" removes those copies too. Signals ("miss you" etc.) travel the same way — encrypted
+on-device, unreadable to the server.</p>
 
 <p><strong>Calendar (1.5).</strong> The optional "Show my phone's events" layer <strong>only reads</strong> this
 iPhone's calendar to draw it on screen. Those events are <strong>never stored, never uploaded, and never shown
 to your partner.</strong> It is off by default and asks for permission only when you turn it on. (Apple provides
-no read-only access to events, so the prompt says full access — but the app <strong>never writes</strong> to your
-calendar; there is no code that creates, edits or deletes events.) Plans you type into the app are a different
+no read-only access to events, so the prompt says full access; this layer itself only reads.) A separate
+setting, also off by default — <strong>"Mirror plans to my phone calendar" (2.0)</strong> — creates a calendar
+named "A DUE" and writes <strong>only your A DUE plans, only into that calendar</strong>, so they show on the
+Lock Screen, Apple Watch and other calendar apps. It touches no other calendar, all of it happens on the
+iPhone, and turning it off removes that calendar entirely. Plans you type into the app are a different
 thing: whether marked "Together" or "Mine", <strong>your partner sees them</strong> — that is the point of the
 feature — and they travel the same encrypted path as before.</p>
 
