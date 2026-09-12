@@ -5,12 +5,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>잡음 지우개 — 개인정보 처리방침 / Noise Eraser Privacy Policy</title>
 <style>
-  :root { color-scheme: light dark; }
+  /* ── 흑금(Gold Noir) — 함대 표준 토큰 ────────────────────────────────────────────
+     값의 출처는 아두에 달력 옷 「금박 누아르」(noirBg/noirCard)와 goldfoil 상수다 — 새로 정한 색이 아니라 **값 복사**다.
+     정본: 브랜딩-흑금-2026-09-10.md §2. 🔴 라이트에서 금 3벌은 흰 배경 대비 1.45~2.37 로 전부 낙제라
+     라이트 블록은 예외 없이 gold.onLight #7E5E2B 로 갈아 끼운다(흰 5.96:1 — AA 통과). */
+  :root {
+    color-scheme: light dark;
+    --bg: #0D0A0A; --rule: #332B27; --rule-soft: #3E342F;
+    --ink: #F6EFE4; --ink-strong: #FFFBF5; --ink-faint: #8D8882;
+    --gold: #DEB873; --gold-ink: #EDD49E;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #FAF7F2; --rule: #E2DCD3; --rule-soft: #D6CFC4;
+      --ink: #1A1512; --ink-strong: #000000; --ink-faint: #6B635B;
+      --gold: #7E5E2B; --gold-ink: #7E5E2B;
+    }
+  }
   body { margin: 0 auto; max-width: 680px; padding: 48px 24px 80px;
     font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", sans-serif;
-    line-height: 1.7; background: #0b0b0b; color: #e8e8e8; }
-  h1 { font-size: 1.5rem; } h2 { font-size: 1.15rem; margin-top: 2.2em; border-bottom: 1px solid #333; padding-bottom: .3em; }
-  .updated { color: #9a9a9a; font-size: .9rem; }
+    line-height: 1.7; background: var(--bg); color: var(--ink); }
+  h1 { font-size: 1.5rem; color: var(--gold-ink); }
+  h2 { font-size: 1.15rem; margin-top: 2.2em; border-bottom: 1px solid var(--rule); padding-bottom: .3em; }
+  strong { color: var(--ink-strong); }
+  a { color: var(--gold); }
+  .updated { color: var(--ink-faint); font-size: .9rem; }
   li { margin: .4em 0; }
 </style>
 </head>
@@ -32,8 +51,9 @@
 <ul>
   <li><strong>오디오 파일·녹음·처리 결과 — 절대 수집하지 않습니다.</strong> 모든 처리는 기기 안에서 실행됩니다.</li>
   <li>파일 이름·내용·연락처·위치도 수집하지 않습니다. 광고 식별자·추적 기술을 쓰지 않습니다.</li>
-  <li>네트워크는 두 갈래뿐입니다: 첫 실행 때 청소 모델(약 213MB)을 받는 것(내려받기만),
-      그리고 동의한 경우의 위 통계 전송.</li>
+  <li>개발자 서버와 닿는 네트워크는 두 갈래뿐입니다: 첫 실행 때 청소 모델(약 213MB)을 받는 것(내려받기만),
+      그리고 동의한 경우의 위 통계 전송.
+      그 밖에 인앱 결제는 Apple StoreKit이 처리하고, 결과 화면의 안내 링크는 Safari로 열립니다 — 둘 다 개발자 서버와 닿지 않습니다.</li>
 </ul>
 
 <h2>3. 보관·위탁</h2>
@@ -47,10 +67,11 @@
 The only data collected is opt-in anonymous usage statistics: a random device ID and
 six event counts (launch, cleaning finished, video cleaning finished, free-limit reached,
 info-link tap, and your statistics consent itself — recorded only if you agreed).
-Audio, file names, and contents are never collected. Two network paths only:
+Audio, file names, and contents are never collected. Two network paths to our own server only:
 a one-time cleaning-model download (~213MB, receive-only) and, if you consent,
 the statistics above (stored with Supabase, Sydney region, kept up to 24 months).
-In-app purchases are handled by Apple. Decline consent at first launch and nothing is collected.</p>
+Beyond that, in-app purchases go through Apple's StoreKit and the info link on the result screen opens in Safari —
+neither touches our server. Decline consent at first launch and nothing is collected.</p>
 
 <p>문의 / Contact: schizoapp@icloud.com</p>
 </body>

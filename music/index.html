@@ -14,7 +14,13 @@
     padding:56px 20px 40px;
   }
   .wrap { width:100%; max-width:430px; }
-  .sig { display:block; width:230px; margin:0 auto 14px; }
+  /* 서명은 어디서든 **실물 하나**(sig_shyund.png = 색 없는 알파 마스크). 예전 sig.png 는 색이 구워진 640x260 변종이라
+     정본과 해시가 어긋나 있었다 — 마스크로 갈아 변종을 0으로(브랜딩-흑금-2026-09-10.md §3-F). 색은 CSS 가 준다.
+     ⚠️ 아티스트 표면은 **무채 유지**(판정: 2층) — 여기엔 금을 쓰지 않는다. 높이만 지정하고 폭은 비율이 낸다. */
+  .sig { display:block; height:93px; aspect-ratio: 1024 / 416; margin:0 auto 14px;
+    background:#e8e8ea;
+    -webkit-mask:url(sig_shyund.png) center/contain no-repeat;
+            mask:url(sig_shyund.png) center/contain no-repeat; }
   .tag { text-align:center; color:#9a9aa2; font-size:14.5px; line-height:1.7; margin-bottom:38px; }
   .card {
     display:block; text-decoration:none; color:inherit;
@@ -35,7 +41,7 @@
 <body>
 <div class="wrap">
 
-  <img class="sig" src="sig.png" alt="Shyun.D">
+  <div class="sig" role="img" aria-label="Shyun.D"></div>
   <p class="tag">방에서 혼자 부른 노래를, 음원으로.<br>그 도구를 직접 만듭니다.</p>
 
   <!-- 듣기 절 — DistroKid 발매 확정 시 주석 해제 + 링크 채우기(메타 3회차 P0-9 선제작).

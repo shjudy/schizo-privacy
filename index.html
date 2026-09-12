@@ -5,28 +5,36 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Shyun.D — 개인정보 처리방침 / Privacy Policy</title>
 <style>
-  :root { color-scheme: light dark; }
+  /* ── 흑금(Gold Noir) — 함대 표준 토큰 ────────────────────────────────────────────
+     값의 출처는 아두에 달력 옷 「금박 누아르」(noirBg/noirCard)와 goldfoil 상수다 — 새로 정한 색이 아니라 **값 복사**다.
+     정본: 브랜딩-흑금-2026-09-10.md §2. 🔴 라이트에서 금 3벌은 흰 배경 대비 1.45~2.37 로 전부 낙제라
+     라이트 블록은 예외 없이 gold.onLight #7E5E2B 로 갈아 끼운다(흰 5.96:1 — AA 통과). */
+  :root {
+    color-scheme: light dark;
+    --bg: #0D0A0A; --rule: #332B27; --rule-soft: #3E342F;
+    --ink: #F6EFE4; --ink-strong: #FFFBF5; --ink-faint: #8D8882;
+    --gold: #DEB873; --gold-ink: #EDD49E;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #FAF7F2; --rule: #E2DCD3; --rule-soft: #D6CFC4;
+      --ink: #1A1512; --ink-strong: #000000; --ink-faint: #6B635B;
+      --gold: #7E5E2B; --gold-ink: #7E5E2B;
+    }
+  }
   body {
     margin: 0 auto; max-width: 680px; padding: 48px 24px 80px;
     font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", sans-serif;
-    line-height: 1.7; background: #0b0b0b; color: #e8e8e8;
+    line-height: 1.7; background: var(--bg); color: var(--ink);
   }
-  h1 { font-size: 1.6rem; letter-spacing: 0.02em; }
-  h2 { font-size: 1.15rem; margin-top: 2.5em; border-bottom: 1px solid #333; padding-bottom: 0.3em; }
+  h1 { font-size: 1.6rem; letter-spacing: 0.02em; color: var(--gold-ink); }
+  h2 { font-size: 1.15rem; margin-top: 2.5em; border-bottom: 1px solid var(--rule); padding-bottom: 0.3em; }
   h3 { font-size: 1rem; margin-top: 1.8em; }
-  strong { color: #fff; }
-  a { color: #bbb; }
+  strong { color: var(--ink-strong); }
+  a { color: var(--gold); }
   li { margin: 0.4em 0; }
-  .updated { color: #888; font-size: 0.85rem; }
-  .callout { border: 1px solid #444; border-radius: 10px; padding: 12px 16px; }
-  @media (prefers-color-scheme: light) {
-    body { background: #fafafa; color: #1a1a1a; }
-    strong { color: #000; }
-    a { color: #555; }
-    h2 { border-color: #ddd; }
-    .updated { color: #777; }
-    .callout { border-color: #ccc; }
-  }
+  .updated { color: var(--ink-faint); font-size: 0.85rem; }
+  .callout { border: 1px solid var(--rule-soft); border-radius: 10px; padding: 12px 16px; }
 </style>
 </head>
 <body>
