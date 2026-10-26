@@ -35,46 +35,41 @@
 </head>
 <body>
 <h1>아두에 A DUE — 개인정보 처리방침</h1>
-<p class="updated">최종 수정 / Last updated: 2026-10-18</p>
+<p class="updated">최종 수정 / Last updated: 2026-09-06</p>
 
 <p><strong>요약: 아두에는 당신이 누구인지 알지 못합니다.</strong>
 계정도, 로그인도, 광고도, 분석 도구도 없습니다. 연애 기록은 당신의 아이폰에 저장됩니다.
 커플 연결을 켜지 않으면 여러분의 기록은 아무것도 서버로 가지 않고, 켜더라도 서버를 지나는 것은
 읽을 수 없는 암호문과 알림 주소뿐입니다(2절). 연결 여부와 무관하게 앱이 스스로 하는 통신은
-<strong>장애 공지 파일 한 개를 읽어 오는 것</strong>뿐이며 올라가는 것은 없습니다 — 연결이 끊긴 뒤, 그 연결의 알림 주소를
-서버에서 <strong>지우는</strong> 요청이 닿을 때까지 앱을 열 때마다 다시 보내는 것만 예외입니다(2절).</p>
+<strong>장애 공지 파일 한 개를 읽어 오는 것</strong>뿐이며 올라가는 것은 없습니다(2절).</p>
 
 <h2>1. 수집하는 정보 — 없음 (커플 연결을 켜지 않는 한)</h2>
 <ul>
-  <li>사귄 날·이름·기념일·사진 등 모든 기록은 <strong>기기 안에</strong> 저장되고, 커플 연결을 켜지 않는 한 <strong>우리 서버로는 가지 않습니다</strong>(아래 「폰 캘린더에 약속 적기」를 켜면 그 캘린더에도 적힙니다).</li>
+  <li>사귄 날·이름·기념일·사진 등 모든 기록은 <strong>기기 안에만</strong> 저장됩니다.</li>
   <li>개발자는 어떤 개인정보도, 사용 통계도 수집하지 않습니다. 광고·추적 기술이 없습니다.</li>
 </ul>
 
 <h2>2. 커플 연결(선택)을 켠 경우</h2>
 <ul>
-  <li>연결은 선택 기능입니다 — 켜지 않으면 <strong>여러분의 기록은 우리 서버로 한 줄도 나가지 않습니다.</strong>
+  <li>연결은 선택 기능입니다 — 켜지 않으면 <strong>여러분의 기록은 한 줄도 나가지 않습니다.</strong>
       다만 앱은 열릴 때마다 <strong>장애 공지 파일 한 개</strong>(이 방침을 서비스하는 같은 주소의 정적 JSON)를
       읽어 옵니다 — 동기화 서버가 멈췄을 때 앱이 침묵하지 않으려는 용도입니다. 쿼리 문자열·쿠키·요청 본문이
       없고 계정·기기 식별자도 실리지 않으며, <strong>올라가는 것은 한 바이트도 없습니다.</strong></li>
   <li>연결하면 사귄 날·이름·기념일·테마와 약속·버킷 리스트·러브 랭귀지가 <strong>기기에서 암호화된 뒤</strong> 중계 서버(Supabase, 호주 시드니
       리전)에 저장됩니다. 서버에는 커플 코드의 해시와 암호문만 있으며, <strong>코드를 모르는 누구도 —
       개발자와 서버 운영사를 포함해 — 내용을 읽을 수 없습니다.</strong></li>
-  <li><strong>사진(2.0 「추억」 · 2.6 약속 첨부)</strong> — 홈 배경 사진은 여전히 이 기기에만 있습니다.
-      추억 탭에 담은 사진과 약속에 첨부한 사진(예약 캡처·티켓 등)은 <strong>원본이 각자의 아이폰에 남고</strong>, 상대에게 건네주기 위한
+  <li><strong>사진(2.0 「추억」)</strong> — 홈 배경 사진은 여전히 이 기기에만 있습니다.
+      추억 탭에 담은 사진은 <strong>원본이 각자의 아이폰에 남고</strong>, 상대에게 건네주기 위한
       <strong>축소 사본이 기기에서 암호화된 뒤</strong> 중계 서버를 지납니다 — 다른 기록과 같은 방식이라
       코드를 모르는 누구도 열 수 없습니다. 서버 사본은 커플당 400장까지만 잠시 머물고 오래된 것부터
       비워집니다(원본은 두 기기에 있으므로 잃는 것이 없습니다). 「서버에서 지우기」가 사진 사본도 함께 지웁니다.</li>
   <li><strong>달력의 「내 폰 일정 겹쳐 보기」(1.5)</strong>는 이 아이폰의 캘린더를 <strong>읽기만</strong> 합니다.
-      겹쳐 보기 자체는 읽은 일정을 화면에 그리는 데만 쓰고 <strong>저장하지도, 서버로 보내지도, 상대에게 보이지도 않습니다.</strong>
-      기본은 꺼져 있고 켤 때만 권한을 묻습니다.
-      다만 <strong>폰 일정 한 건을 직접 눌러 「내 일정으로」나 「함께 약속으로」 옮기면(3.0)</strong>, 그 한 건(제목·날짜·시각·장소 — 메모는 옮기지 않습니다)이
-      약속 시트에 채워지고, <strong>저장한 경우에만</strong> 아두에 일정이 됩니다 — 그때부터는 다른 약속처럼 암호화돼 상대와 나눕니다.
-      자동으로 옮겨지는 일정은 없고, 원본은 폰 캘린더에 그대로 남습니다.</li>
+      읽은 일정은 화면에 그리는 데만 쓰이고 <strong>저장하지도, 서버로 보내지도, 상대에게 보이지도 않습니다.</strong>
+      기본은 꺼져 있고 켤 때만 권한을 묻습니다.</li>
   <li><strong>「폰 캘린더에 약속 적기」(2.0)</strong>를 켜면 앱이 아이폰 캘린더에 「A DUE」라는 전용
-      캘린더를 만들고 <strong>우리 약속과 내 일정만 그 안에</strong> 적어 줍니다 — 잠금화면·애플워치·다른 캘린더
-      앱에서도 보이게 하기 위한 기능입니다. 다른 캘린더는 건드리지 않고, 우리 서버나 상대에게 보내는 것도 없습니다.
-      다만 <strong>iCloud 캘린더를 쓰면</strong> 「A DUE」 캘린더도 Apple이 <strong>같은 Apple 계정의 다른 기기</strong>(아이패드·맥 등)에 동기해 그 기기에서도 보입니다.
-      끄면 앱이 만든 「A DUE」 캘린더를 <strong>통째로</strong> 지웁니다 — 그 캘린더에 직접 적은 일정도 함께 지워집니다(예전 판이 이름으로 맡아 쓴 캘린더면 앱이 적은 약속만 걷습니다). 기본은 꺼져 있습니다.</li>
+      캘린더를 만들고 <strong>우리 약속만 그 안에</strong> 적어 줍니다 — 잠금화면·애플워치·다른 캘린더
+      앱에서도 보이게 하기 위한 기능입니다. 다른 캘린더는 건드리지 않고, 이 동작은 전부
+      <strong>아이폰 안에서만</strong> 일어나며, 끄면 그 캘린더가 통째로 사라집니다. 기본은 꺼져 있습니다.</li>
   <li>달력에 직접 적는 일정은 「함께」와 「내 일정」으로 나뉘고, <strong>둘 다 상대에게 보입니다</strong>(그게 이 기능의 목적입니다).
       저장·전송 방식은 기존 약속과 같습니다 — 기기에서 암호화된 뒤 중계됩니다. 위의 「겹쳐 보기」와는 다른 것입니다.</li>
   <li>시그널("보고싶어" 등)도 같은 방식입니다 — 기기에서 암호화된 뒤 중계되며, 서버는 어떤 시그널을
@@ -87,8 +82,7 @@
       묶이지 않으며, 서버는 그 옆에 있는 해시를 풀 수 없으므로 <strong>여러분이 누구인지 알 수 없습니다.</strong>
       알림에는 <strong>시그널 내용이 실리지 않습니다</strong> — 서버는 읽을 수 없기에 "마음이 도착했어요"라는
       고정된 문구만 보내고, 어떤 마음이었는지는 여러분의 폰이 코드로 풀어 보여줍니다. 연결하지 않으면 주소도
-      전송되지 않습니다. 연결이 끊기면 앱이 이 주소를 서버에서 <strong>지우는</strong> 요청(커플 코드의 해시와 알림 주소)을 보내고,
-      닿지 않았으면 닿을 때까지 앱을 열 때마다 다시 보냅니다 — 지우기만 하는 요청입니다.</li>
+      전송되지 않습니다.</li>
   <li>설정의 "서버에서 지우기"를 누르면 서버의 암호문이(시그널 포함) 즉시 삭제됩니다 — 알림 주소도 함께
       지워집니다. 6개월 넘게 쓰이지 않은 주소는 자동으로 정리됩니다. 앱을 지워도 기록은
       상대와 나의 기기에 남습니다 — 서버가 사라져도 여러분의 기록은 사라지지 않습니다.</li>
@@ -101,12 +95,10 @@
 
 <h2>English</h2>
 <p><strong>A DUE does not know who you are.</strong> No account, no sign-in, no ads, no analytics.
-Your story is stored on your iPhone. Pairing is optional — without it <strong>none of your records go to
-our server</strong>. (The app does fetch one small static notice file from the same site that serves this
+Your story is stored on your iPhone. Pairing is optional — without it <strong>none of your records leave
+the phone</strong>. (The app does fetch one small static notice file from the same site that serves this
 policy, so it can tell you when the sync service is down: a plain GET with no query string, no cookies,
-no body and no account or device identifier — nothing is uploaded. The one exception is after pairing ends:
-until it goes through, the app resends a request to <strong>delete</strong> that pairing's notification address from our
-server each time it opens.) If you pair, your dates, anniversaries,
+no body and no account or device identifier — nothing is uploaded.) If you pair, your dates, anniversaries,
 plans, bucket list and love language are <strong>encrypted on-device</strong>
 before being relayed through our server (Supabase, Sydney region); the server holds only a hash of
 your couple code and the ciphertext — no one without the code, including us, can read it.
@@ -117,19 +109,13 @@ clears the oldest first; ticket and booking captures attached to a plan share th
 on-device, unreadable to the server.</p>
 
 <p><strong>Calendar (1.5).</strong> The optional "Show my phone's events" layer <strong>only reads</strong> this
-iPhone's calendar to draw it on screen; the layer itself <strong>stores nothing, uploads nothing and shows
-nothing to your partner.</strong> It is off by default and asks for permission only when you turn it on. (Apple provides
-no read-only access to events, so the prompt says full access; this layer itself only reads.)
-<strong>Copying one event (3.0):</strong> if you tap a phone event and choose "As my plan" or "As a plan together",
-that single event (title, date, time and place — never its notes) fills in the plan sheet, and <strong>only if you
-save it</strong> does it become an A DUE plan — from then on it is encrypted and shared with your partner like any
-other plan. Nothing is copied automatically, and the original stays in your phone calendar. A separate
+iPhone's calendar to draw it on screen. Those events are <strong>never stored, never uploaded, and never shown
+to your partner.</strong> It is off by default and asks for permission only when you turn it on. (Apple provides
+no read-only access to events, so the prompt says full access; this layer itself only reads.) A separate
 setting, also off by default — <strong>"Mirror plans to my phone calendar" (2.0)</strong> — creates a calendar
 named "A DUE" and writes <strong>only your A DUE plans, only into that calendar</strong>, so they show on the
-Lock Screen, Apple Watch and other calendar apps. It touches no other calendar and sends nothing to our server
-or your partner, but <strong>if you use iCloud Calendar, Apple syncs the "A DUE" calendar to your other devices
-signed in to the same Apple Account</strong>. Turning it off deletes the "A DUE" calendar the app created,
-including any events you added to it yourself (a calendar an older version adopted by name keeps its other events). Plans you type into the app are a different
+Lock Screen, Apple Watch and other calendar apps. It touches no other calendar, all of it happens on the
+iPhone, and turning it off removes that calendar entirely. Plans you type into the app are a different
 thing: whether marked "Together" or "Mine", <strong>your partner sees them</strong> — that is the point of the
 feature — and they travel the same encrypted path as before.</p>
 
@@ -139,9 +125,7 @@ is issued by Apple for the device itself; it is not tied to your name, contacts 
 since we cannot unlock the hash sitting next to it, <strong>it does not tell us who you are</strong>.
 The notification carries <strong>no signal content</strong> — we could not read it anyway, so the
 server sends only a fixed line ("A heart arrived") and your own phone unlocks the rest with your code.
-Without pairing, no address is ever sent. When pairing ends, the app sends a request to <strong>delete</strong> this
-address (with the hashed couple code) from our server and, if it does not go through, resends it each time the app
-opens until it does — a delete-only request.</p>
+Without pairing, no address is ever sent.</p>
 
 <p>"Erase from server" deletes the ciphertext (signals included) and the notification address
 immediately; addresses unused for six months are cleared automatically. Your records always remain on
